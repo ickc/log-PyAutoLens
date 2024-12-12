@@ -14,6 +14,7 @@
     - Coleman is the one to ask about jax
 - schedule a weekly meeting in the week of 12/9
 - learn jax
+
 # Questions
 
 - these are deleted:
@@ -53,6 +54,20 @@ From @Jam:
 
 > Busy day so will send expanded instructions later but this is the Google Doc which explains the project layout and how to get started:[https://docs.google.com/document/d/1jGlxdnpjX5t4rXKBc0hrRx9vWcgXXnoR_5RY2nWTeUs/edit?usp=sharing](https://docs.google.com/document/d/1jGlxdnpjX5t4rXKBc0hrRx9vWcgXXnoR_5RY2nWTeUs/edit?usp=sharing)The project is spread out over multiple repos so takes a bit of getting used to.This is the simple task which is probably a good starting point as an example of trying to convert code from numba to JAX:[https://github.com/Jammy2211/autogalaxy_workspace_test/tree/master/jax_examples/task_2_simple_conversions](https://github.com/Jammy2211/autogalaxy_workspace_test/tree/master/jax_examples/task_2_simple_conversions)
 
+## Environment
+
+I created a reproducible-ish environment using pixi.
+
+Status:
+
+- all `PyAuto*`'s dependencies added.
+
+     > WARN These conda-packages will be overridden by pypi:
+     >   networkx, jsonpickle
+
+- [ ] setup `PyAuto*` as submodules and use editable dependencies documented in <https://pixi.sh/latest/reference/pixi_manifest/#pypi-dependencies>.
+
+- [ ] run tests
 
 # DiRAC COSMA
 
