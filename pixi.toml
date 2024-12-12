@@ -1,0 +1,11 @@
+[project]
+authors = ["Kolen Cheung <christian.kolen@gmail.com>"]
+channels = ["conda-forge"]
+description = "A conda environment for developing PyAutoLens and its dependencies."
+name = "log-PyAutoLens"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
