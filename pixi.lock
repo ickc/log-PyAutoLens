@@ -14,7 +14,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/alsa-lib-1.2.13-hb9d3cd8_0.conda
       - conda: https://conda.anaconda.org/handley-lab/noarch/anesthetic-2.8.14-py_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/linux-64/aom-3.9.1-hac33072_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/arviz-0.20.0-pyhd8ed1ab_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/arviz-0.20.0-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/astropy-6.1.2-py312h4fc7734_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/astropy-iers-data-0.2024.12.9.0.36.21-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/asttokens-3.0.0-pyhd8ed1ab_1.conda
@@ -64,7 +64,6 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/freetype-2.12.1-h267a509_2.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/future-1.0.0-pyhd8ed1ab_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/giflib-5.2.2-hd590300_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/gprof2dot-2024.6.6-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/graphite2-1.3.13-h59595ed_1003.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/greenlet-3.1.1-py312h2ec8cdc_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/h2-4.1.0-pyhd8ed1ab_1.conda
@@ -193,6 +192,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/python-3.12.8-h9e4cc4f_1_cpython.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-dateutil-2.9.0.post0-pyhff2d567_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/python-tzdata-2024.2-pyhd8ed1ab_1.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/python-xxhash-3.4.1-py312h98912ed_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/python_abi-3.12-5_cp312.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/pytz-2024.1-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pywavelets-1.8.0-py312hc0a28a1_0.conda
@@ -221,7 +221,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/svt-av1-2.3.0-h5888daf_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/tabulate-0.9.0-pyhd8ed1ab_2.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/threadpoolctl-3.2.0-pyha21a80b_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/tifffile-2024.9.20-pyhd8ed1ab_1.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/tifffile-2024.12.12-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/timeout-decorator-0.5.0-pyhd8ed1ab_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/linux-64/tk-8.6.13-noxft_h4845f30_101.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/tomli-2.2.1-pyhd8ed1ab_1.conda
@@ -267,10 +267,17 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zlib-ng-2.2.2-h5888daf_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstandard-0.23.0-py312hef9b889_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/zstd-1.5.6-ha6fb4c9_0.conda
+      - pypi: https://files.pythonhosted.org/packages/53/60/e7f8a268ec92938f5b7abe53c59c528841078d45e89e684adddd11f7196d/anesthetic-2.8.14-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/55/9d/a401aea9a02651d1b3f4ced01a0efd846e2579f38597d7996fd3feafd5a6/colossus-1.3.1-py2.py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/0f/80/11d3ec1703cc61606ddc68851747d1d1df3700d5e6c2b559af6dbeb398c5/gprof2dot-2021.2.21.tar.gz
       - pypi: https://files.pythonhosted.org/packages/a1/64/815460f86d94c9e1431800a75061719824c6fef14d88a6117eba3126cd5b/jsonpickle-4.0.0-py3-none-any.whl
-      - pypi: https://files.pythonhosted.org/packages/b9/54/dd730b32ea14ea797530a4479b2ed46a6fb250f682a9cfb997e968bf0261/networkx-3.4.2-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/a8/05/9d4f9b78ead6b2661d6e8ea772e111fc4a9fbd866ad0c81906c11206b55e/networkx-3.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/ab/4b/e37e4e5d5ee1179694917b445768bdbfb084f5a59ecd38089d3413d4c70f/pyvis-0.3.2-py3-none-any.whl
+      - pypi: packages/PyAutoArray
+      - pypi: packages/PyAutoConf
+      - pypi: packages/PyAutoFit
+      - pypi: packages/PyAutoGalaxy
+      - pypi: packages/PyAutoLens
 packages:
 - conda: https://conda.anaconda.org/conda-forge/linux-64/_libgcc_mutex-0.1-conda_forge.tar.bz2
   sha256: fe51de6107f9edc7aa4f786a70f4a883943bc9d39b3bb7307c04c41410990726
@@ -321,6 +328,37 @@ packages:
   purls: []
   size: 560238
   timestamp: 1731489643707
+- pypi: https://files.pythonhosted.org/packages/53/60/e7f8a268ec92938f5b7abe53c59c528841078d45e89e684adddd11f7196d/anesthetic-2.8.14-py3-none-any.whl
+  name: anesthetic
+  version: 2.8.14
+  sha256: 6f298916797ac51f489889771f959c8ebb8dc9f7996a26318d3375ddde7fa915
+  requires_dist:
+  - scipy<2.0.0
+  - numpy<2.0.0
+  - pandas~=2.2.0
+  - matplotlib>=3.6.1,<3.10.0
+  - h5py ; extra == 'all'
+  - astropy ; extra == 'all'
+  - fastkde ; extra == 'all'
+  - getdist ; extra == 'all'
+  - tables ; extra == 'all'
+  - astropy ; extra == 'astropy'
+  - sphinx>=4.2.0 ; extra == 'docs'
+  - sphinx-rtd-theme>=1.2.2 ; extra == 'docs'
+  - sphinx-copybutton ; extra == 'docs'
+  - sphinx-autodoc-typehints ; extra == 'docs'
+  - numpydoc ; extra == 'docs'
+  - fastkde ; extra == 'fastkde'
+  - getdist ; extra == 'getdist'
+  - tables==3.8.0 ; extra == 'hdf5'
+  - pytest ; extra == 'test'
+  - pytest-cov ; extra == 'test'
+  - flake8 ; extra == 'test'
+  - pydocstyle ; extra == 'test'
+  - packaging ; extra == 'test'
+  - pre-commit ; extra == 'test'
+  - h5py ; extra == 'ultranest'
+  requires_python: '>=3.8'
 - conda: https://conda.anaconda.org/handley-lab/noarch/anesthetic-2.8.14-py_0.tar.bz2
   sha256: dc72b20887c7fc8a604dc5085c70167d79fe6dc031898be4468aff59a3c85e66
   md5: 03fd36e6651ab8249733b5ef12b940fc
@@ -346,9 +384,9 @@ packages:
   purls: []
   size: 2706396
   timestamp: 1718551242397
-- conda: https://conda.anaconda.org/conda-forge/noarch/arviz-0.20.0-pyhd8ed1ab_0.conda
-  sha256: 2e86300d089555741c8f81a73e72aa90f90cda35b494329e1b940e2d31845936
-  md5: 7e13efee221dc6ad25fcc2e4d65df7e3
+- conda: https://conda.anaconda.org/conda-forge/noarch/arviz-0.20.0-pyhd8ed1ab_1.conda
+  sha256: a41ee718207a4defccf6eae8e85f622e82fa45323744dd49af8657cb5872ab43
+  md5: 03111f1a24b520153bf7912a36eb65f3
   depends:
   - h5netcdf >=1.0.2
   - matplotlib-base >=3.5
@@ -365,8 +403,8 @@ packages:
   license_family: Apache
   purls:
   - pkg:pypi/arviz?source=hash-mapping
-  size: 1473292
-  timestamp: 1727611803479
+  size: 1473775
+  timestamp: 1734087589897
 - conda: https://conda.anaconda.org/conda-forge/linux-64/astropy-6.1.2-py312h4fc7734_0.conda
   sha256: b0a1974b9631b68d7eee79ffb37ecacdcd5d9f9bc4f6c75d1dca7df59a210ce4
   md5: da0cc3d397ef1db55bdca0884ff991ab
@@ -436,6 +474,84 @@ packages:
   - pkg:pypi/attrs?source=hash-mapping
   size: 56336
   timestamp: 1733520064905
+- pypi: packages/PyAutoArray
+  name: autoarray
+  version: 1.0.dev0
+  sha256: 23098731e18dd9761c95575345f6779d8bd2e87559123a50d977885247409c5d
+  requires_dist:
+  - astropy>=5.0,<=6.1.2
+  - decorator>=4.0.0
+  - dill>=0.3.1.1
+  - matplotlib>=3.7.0
+  - scipy<=1.14.0
+  - scikit-image<=0.24.0
+  - scikit-learn<=1.5.1
+  - autoconf==1.0.dev0
+  editable: true
+- pypi: packages/PyAutoConf
+  name: autoconf
+  version: 1.0.dev0
+  sha256: 987d282f6b3cf3099912c24d2839e093093a32d72ab7e0af674344862734fb6d
+  requires_dist:
+  - typing-inspect>=0.4.0
+  - pathlib
+  - pyyaml>=6.0.1
+  - numpy>=1.24.0,<=2.0.1
+  editable: true
+- pypi: packages/PyAutoFit
+  name: autofit
+  version: 1.0.dev0
+  sha256: 50bdb5e142d051d8d3350c321fda06e66347117b6243f939b129336879bb498b
+  requires_dist:
+  - anesthetic==2.8.14
+  - corner==2.2.2
+  - decorator>=4.2.1
+  - dill>=0.3.1.1
+  - dynesty==2.1.4
+  - typing-inspect>=0.4.0
+  - emcee>=3.1.6
+  - gprof2dot==2021.2.21
+  - matplotlib
+  - numpydoc>=1.0.0
+  - pyprojroot==0.2.0
+  - pyswarms==1.3.0
+  - h5py>=3.11.0
+  - sqlalchemy==2.0.32
+  - scipy<=1.14.0
+  - astunparse==1.6.3
+  - threadpoolctl>=3.1.0,<=3.2.0
+  - timeout-decorator==0.5.0
+  - xxhash<=3.4.1
+  - networkx==3.1
+  - pyvis==0.3.2
+  - psutil==6.1.0
+  - autoconf==1.0.dev0
+  requires_python: '>=3.7'
+  editable: true
+- pypi: packages/PyAutoGalaxy
+  name: autogalaxy
+  version: 1.0.dev0
+  sha256: 9d5f3e50e534a91f6fe1bfd412d1247177ff9a4a75e35f532e15badbebc3eba2
+  requires_dist:
+  - colossus==1.3.1
+  - astropy>=5.0,<=6.1.2
+  - nautilus-sampler==1.0.4
+  - autoconf==1.0.dev0
+  - autoarray==1.0.dev0
+  - autofit==1.0.dev0
+  requires_python: '>=3.7'
+  editable: true
+- pypi: packages/PyAutoLens
+  name: autolens
+  version: 1.0.dev0
+  sha256: de52577c712b41c08e9a85f807c0ee0dede14dd7a09e2c00cdd9562acf870283
+  requires_dist:
+  - nautilus-sampler==1.0.4
+  - autoarray==1.0.dev0
+  - autoconf==1.0.dev0
+  - autofit==1.0.dev0
+  - autogalaxy==1.0.dev0
+  editable: true
 - conda: https://conda.anaconda.org/conda-forge/noarch/babel-2.16.0-pyhd8ed1ab_1.conda
   sha256: f6205d3a62e87447e06e98d911559be0208d824976d77ab092796c9176611fcb
   md5: 3e23f7db93ec14c80525257d8affac28
@@ -1015,17 +1131,10 @@ packages:
   purls: []
   size: 77248
   timestamp: 1712692454246
-- conda: https://conda.anaconda.org/conda-forge/noarch/gprof2dot-2024.6.6-pyhd8ed1ab_0.conda
-  sha256: d81d8e6c15560fee894f6dabf1a741d750f1eed3a88bd849f5cc0c50ab4daa77
-  md5: a20feb358c7971a03b26ba1a509dfdea
-  depends:
-  - python >=3.8
-  license: LGPL-3.0-or-later
-  license_family: LGPL
-  purls:
-  - pkg:pypi/gprof2dot?source=hash-mapping
-  size: 39185
-  timestamp: 1724245840332
+- pypi: https://files.pythonhosted.org/packages/0f/80/11d3ec1703cc61606ddc68851747d1d1df3700d5e6c2b559af6dbeb398c5/gprof2dot-2021.2.21.tar.gz
+  name: gprof2dot
+  version: 2021.2.21
+  sha256: 1223189383b53dcc8ecfd45787ac48c0ed7b4dbc16ee8b88695d053eea1acabf
 - conda: https://conda.anaconda.org/conda-forge/linux-64/graphite2-1.3.13-h59595ed_1003.conda
   sha256: 0595b009f20f8f60f13a6398e7cdcbd2acea5f986633adcf85f5a2283c992add
   md5: f87c7b7c2cb45f323ffbce941c78ab7c
@@ -2479,41 +2588,32 @@ packages:
   purls: []
   size: 889086
   timestamp: 1724658547447
-- pypi: https://files.pythonhosted.org/packages/b9/54/dd730b32ea14ea797530a4479b2ed46a6fb250f682a9cfb997e968bf0261/networkx-3.4.2-py3-none-any.whl
+- pypi: https://files.pythonhosted.org/packages/a8/05/9d4f9b78ead6b2661d6e8ea772e111fc4a9fbd866ad0c81906c11206b55e/networkx-3.1-py3-none-any.whl
   name: networkx
-  version: 3.4.2
-  sha256: df5d4365b724cf81b8c6a7312509d0c22386097011ad1abe274afd5e9d3bbc5f
+  version: '3.1'
+  sha256: 4f33f68cb2afcf86f28a45f43efc27a9386b535d567d2127f8f61d51dec58d36
   requires_dist:
-  - numpy>=1.24 ; extra == 'default'
-  - scipy>=1.10,!=1.11.0,!=1.11.1 ; extra == 'default'
-  - matplotlib>=3.7 ; extra == 'default'
-  - pandas>=2.0 ; extra == 'default'
-  - changelist==0.5 ; extra == 'developer'
+  - numpy>=1.20 ; extra == 'default'
+  - scipy>=1.8 ; extra == 'default'
+  - matplotlib>=3.4 ; extra == 'default'
+  - pandas>=1.3 ; extra == 'default'
   - pre-commit>=3.2 ; extra == 'developer'
   - mypy>=1.1 ; extra == 'developer'
-  - rtoml ; extra == 'developer'
-  - sphinx>=7.3 ; extra == 'doc'
-  - pydata-sphinx-theme>=0.15 ; extra == 'doc'
-  - sphinx-gallery>=0.16 ; extra == 'doc'
-  - numpydoc>=1.8.0 ; extra == 'doc'
+  - sphinx>=6.1 ; extra == 'doc'
+  - pydata-sphinx-theme>=0.13 ; extra == 'doc'
+  - sphinx-gallery>=0.12 ; extra == 'doc'
+  - numpydoc>=1.5 ; extra == 'doc'
   - pillow>=9.4 ; extra == 'doc'
+  - nb2plots>=0.6 ; extra == 'doc'
   - texext>=0.6.7 ; extra == 'doc'
-  - myst-nb>=1.1 ; extra == 'doc'
-  - intersphinx-registry ; extra == 'doc'
-  - osmnx>=1.9 ; extra == 'example'
-  - momepy>=0.7.2 ; extra == 'example'
-  - contextily>=1.6 ; extra == 'example'
-  - seaborn>=0.13 ; extra == 'example'
-  - cairocffi>=1.7 ; extra == 'example'
-  - igraph>=0.11 ; extra == 'example'
-  - scikit-learn>=1.5 ; extra == 'example'
   - lxml>=4.6 ; extra == 'extra'
-  - pygraphviz>=1.14 ; extra == 'extra'
-  - pydot>=3.0.1 ; extra == 'extra'
+  - pygraphviz>=1.10 ; extra == 'extra'
+  - pydot>=1.4.2 ; extra == 'extra'
   - sympy>=1.10 ; extra == 'extra'
   - pytest>=7.2 ; extra == 'test'
   - pytest-cov>=4.0 ; extra == 'test'
-  requires_python: '>=3.10'
+  - codecov>=2.1 ; extra == 'test'
+  requires_python: '>=3.8'
 - conda: https://conda.anaconda.org/conda-forge/noarch/networkx-3.4.2-pyh267e887_2.conda
   sha256: 39625cd0c9747fa5c46a9a90683b8997d8b9649881b3dc88336b13b7bdd60117
   md5: fd40bf7f7f4bc4b647dc8512053d9873
@@ -2978,6 +3078,22 @@ packages:
   - pkg:pypi/tzdata?source=hash-mapping
   size: 142235
   timestamp: 1733235414217
+- conda: https://conda.anaconda.org/conda-forge/linux-64/python-xxhash-3.4.1-py312h98912ed_0.conda
+  sha256: 8d03e8cf209395c5af71dd75984f65658cf36e921d76efacf0abab64c4dd3e2f
+  md5: a8f9739e0ada2320148c92ddd608864f
+  depends:
+  - libgcc-ng >=12
+  - python >=3.12,<3.13.0a0
+  - python_abi 3.12.* *_cp312
+  - xxhash >=0.8.2,<0.8.3.0a0
+  arch: x86_64
+  platform: linux
+  license: BSD-2-Clause
+  license_family: BSD
+  purls:
+  - pkg:pypi/xxhash?source=hash-mapping
+  size: 22964
+  timestamp: 1696486442370
 - conda: https://conda.anaconda.org/conda-forge/linux-64/python_abi-3.12-5_cp312.conda
   build_number: 5
   sha256: d10e93d759931ffb6372b45d65ff34d95c6000c61a07e298d162a3bc2accebb0
@@ -3463,9 +3579,9 @@ packages:
   - pkg:pypi/threadpoolctl?source=hash-mapping
   size: 20981
   timestamp: 1689261378222
-- conda: https://conda.anaconda.org/conda-forge/noarch/tifffile-2024.9.20-pyhd8ed1ab_1.conda
-  sha256: 1705a082f7790883336ea6488628930187f2383450731692e0da657dd6921191
-  md5: 643ba9f18a10b76a6bd72a2cd0ece112
+- conda: https://conda.anaconda.org/conda-forge/noarch/tifffile-2024.12.12-pyhd8ed1ab_0.conda
+  sha256: 2108062a852cb273d685e9512845001b79c08c541b197bc874ade70b3e2c630c
+  md5: 59d646aa704b6024cb965be43493ed45
   depends:
   - imagecodecs >=2023.8.12
   - numpy >=1.19.2
@@ -3476,8 +3592,8 @@ packages:
   license_family: BSD
   purls:
   - pkg:pypi/tifffile?source=hash-mapping
-  size: 179947
-  timestamp: 1733737699988
+  size: 180796
+  timestamp: 1734094803935
 - conda: https://conda.anaconda.org/conda-forge/noarch/timeout-decorator-0.5.0-pyhd8ed1ab_0.tar.bz2
   sha256: 89640b2bbfcd7ff93a449390de8419acd39053063bced8e0344fde4d5a6a2d84
   md5: 6a534aec7f5df095fdb40a0d2eb04a85
