@@ -1,0 +1,7 @@
+version: "3"
+
+tasks:
+  init:
+    desc: "Pull all git submodules"
+    cmds:
+      - git submodule update --init --recursive
