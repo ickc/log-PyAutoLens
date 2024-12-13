@@ -122,3 +122,15 @@ for LINK in "${LINKS[@]}"; do
     ln -s "$TARGET_DIR/$LINK" "$LINK"
 done
 ```
+
+### Git submodules
+
+```bash
+git submodule add -b main https://github.com/Jammy2211/autogalaxy_workspace.git packages/autogalaxy_workspace
+git submodule add -b main https://github.com/Jammy2211/PyAutoArray.git packages/PyAutoArray
+git submodule add -b main https://github.com/Jammy2211/PyAutoGalaxy.git packages/PyAutoGalaxy
+git submodule add -b main https://github.com/Jammy2211/PyAutoLens.git packages/PyAutoLens
+git submodule add -b main https://github.com/rhayes777/PyAutoConf.git packages/PyAutoConf
+git submodule add -b main https://github.com/rhayes777/PyAutoFit.git packages/PyAutoFit
+git submodule add -b master https://github.com/Jammy2211/autogalaxy_workspace_test.git packages/autogalaxy_workspace_test
+```
