@@ -1,3 +1,5 @@
+From <https://docs.google.com/document/d/1jGlxdnpjX5t4rXKBc0hrRx9vWcgXXnoR_5RY2nWTeUs/edit>
+
 # Project Structure & Overview
 
 **PyAutoLens** is found at the following GitHub repository: <https://github.com/Jammy2211/PyAutoLens>
