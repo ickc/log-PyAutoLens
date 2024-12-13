@@ -1,15 +1,15 @@
 # Project Structure & Overview
 
-**PyAutoLens** is found at the following GitHub repository: [https://github.com/Jammy2211/PyAutoLens](https://github.com/Jammy2211/PyAutoLens)
+**PyAutoLens** is found at the following GitHub repository: <https://github.com/Jammy2211/PyAutoLens>
 
 However, a large fraction of functionality used by PyAutoLens (which we will need to JAX-ify) is actually contained in the following 4 parent projects:
 
-* **PyAutoConf:** [https://github.com/rhayes777/PyAutoConf](https://github.com/rhayes777/PyAutoConf) hands config files, probably not relevant for JAX development.  
-* **PyAutoFit:** [https://github.com/rhayes777/PyAutoFit](https://github.com/rhayes777/PyAutoFit) (Statistics library which interfaces with JAX when fitting models).  
-* **PyAutoArray:** [https://github.com/Jammy2211/PyAutoArray](https://github.com/Jammy2211/PyAutoArray) (Extends NumPy array with custom data structures for performing calculations, including functionality which can use JAX arrays instead of numpy arrays).  
-* **PyAutoGalaxy:** [https://github.com/Jammy2211/PyAutoGalaxy](https://github.com/Jammy2211/PyAutoGalaxy) (Fits non-lensed galaxies, will be where we start JAX development).
+* **PyAutoConf:** <https://github.com/rhayes777/PyAutoConf> hands config files, probably not relevant for JAX development.
+* **PyAutoFit:** <https://github.com/rhayes777/PyAutoFit> (Statistics library which interfaces with JAX when fitting models).
+* **PyAutoArray:** <https://github.com/Jammy2211/PyAutoArray> (Extends NumPy array with custom data structures for performing calculations, including functionality which can use JAX arrays instead of numpy arrays).
+* **PyAutoGalaxy:** <https://github.com/Jammy2211/PyAutoGalaxy> (Fits non-lensed galaxies, will be where we start JAX development).
 
-You will want to start by **git clone** all these repos – Instructions of setting this up are here: [https://pyautolens.readthedocs.io/en/latest/installation/source.html](https://pyautolens.readthedocs.io/en/latest/installation/source.html)
+You will want to start by **git clone** all these repos – Instructions of setting this up are here: <https://pyautolens.readthedocs.io/en/latest/installation/source.html>
 
 ## Workspaces
 
@@ -17,7 +17,7 @@ The above repos are the **source code repositories**, where development takes pl
 
 After a user has installed PyAutoLens they download a workspace which contains examples and tutorial.
 
-To simplify JAX development, we will start working with **PyAutoGalaxy** and therefore should check out the **autogalaxy_workspace:** [https://github.com/Jammy2211/autogalaxy_workspace](https://github.com/Jammy2211/autogalaxy_workspace/tree/release)
+To simplify JAX development, we will start working with **PyAutoGalaxy** and therefore should check out the **autogalaxy_workspace:** <https://github.com/Jammy2211/autogalaxy_workspace/tree/release>
 
 **Make sure you clone the main branch, not the release branch, noting that main is not the default branch!!!**
 
@@ -25,33 +25,33 @@ To simplify JAX development, we will start working with **PyAutoGalaxy** and the
 
 Following scripts are worth a read through to get a sense of the scientific scope of the project:
 
-* [https://github.com/Jammy2211/autogalaxy_workspace/blob/release/start_here.ipynb](https://github.com/Jammy2211/autogalaxy_workspace/blob/release/start_here.ipynb)
+* <https://github.com/Jammy2211/autogalaxy_workspace/blob/release/start_here.ipynb>
 
 ## Guides
 
 This is the step by step guide to the likelihood function we will speed up with JAX:  
-[https://github.com/Jammy2211/autogalaxy_workspace/blob/main/notebooks/advanced/log_likelihood_function/imaging/light_profile/log_likelihood_function.ipynb](https://github.com/Jammy2211/autogalaxy_workspace/blob/main/notebooks/advanced/log_likelihood_function/imaging/light_profile/log_likelihood_function.ipynb)
+<https://github.com/Jammy2211/autogalaxy_workspace/blob/main/notebooks/advanced/log_likelihood_function/imaging/light_profile/log_likelihood_function.ipynb>
 
 The following contributor_guide explains where code is, however this covers more functionality than we will start with so I am going to update this to only include what you need to get started:
 
-[https://github.com/Jammy2211/autogalaxy_workspace/blob/main/notebooks/advanced/log_likelihood_function/imaging/light_profile/contributor_guide.ipynb](https://github.com/Jammy2211/autogalaxy_workspace/blob/main/notebooks/advanced/log_likelihood_function/imaging/light_profile/contributor_guide.ipynb)
+<https://github.com/Jammy2211/autogalaxy_workspace/blob/main/notebooks/advanced/log_likelihood_function/imaging/light_profile/contributor_guide.ipynb>
 
 ## PyAutoArray Data Structures
 
 The project PyAutoArray creates a number of Python classes which extend np.ndarray with functionality required for the astronomy projects:
 
-* [https://github.com/Jammy2211/PyAutoArray/tree/main/autoarray/structures](https://github.com/Jammy2211/PyAutoArray/tree/main/autoarray/structures)  
-* [https://github.com/Jammy2211/PyAutoArray/blob/main/autoarray/structures/arrays/uniform_2d.py](https://github.com/Jammy2211/PyAutoArray/blob/main/autoarray/structures/arrays/uniform_2d.py)  
-* [https://github.com/Jammy2211/PyAutoArray/blob/main/autoarray/structures/grids/uniform_2d.py](https://github.com/Jammy2211/PyAutoArray/blob/main/autoarray/structures/grids/uniform_2d.py)
+* <https://github.com/Jammy2211/PyAutoArray/tree/main/autoarray/structures>
+* <https://github.com/Jammy2211/PyAutoArray/blob/main/autoarray/structures/arrays/uniform_2d.py>
+* <https://github.com/Jammy2211/PyAutoArray/blob/main/autoarray/structures/grids/uniform_2d.py>
 
 This initially caused problems with JAX, as JAX requires one to use JAX arrays instead of numpy arrays, so a lot of conflicts arose.  
 Rich (who was in the Zoom call) implemented a lot of functionality that meant the source code provided simultaneous support for numpy arrays (including numba calculations) and JAX arrays:
 
-* [https://github.com/Jammy2211/PyAutoArray/pull/80](https://github.com/Jammy2211/PyAutoArray/pull/80)  
-* [https://github.com/Jammy2211/PyAutoGalaxy/pull/147](https://github.com/Jammy2211/PyAutoGalaxy/pull/147)
+* <https://github.com/Jammy2211/PyAutoArray/pull/80>
+* <https://github.com/Jammy2211/PyAutoGalaxy/pull/147>
 
 This is why many of these data structures have weird Python functions like this:  
-[https://github.com/Jammy2211/PyAutoArray/blob/main/autoarray/abstract_ndarray.py](https://github.com/Jammy2211/PyAutoArray/blob/main/autoarray/abstract_ndarray.py)
+<https://github.com/Jammy2211/PyAutoArray/blob/main/autoarray/abstract_ndarray.py>
 
 ```python
 @classmethod
@@ -99,32 +99,32 @@ In order for JAX functionality to work, you need to not only install jax (pip in
 
 To run the scripts below, use the following JAX branches:
 
-* [https://github.com/rhayes777/PyAutoFit/tree/feature/jax_assert_disable](https://github.com/rhayes777/PyAutoFit/tree/feature/jax_assert_disable)  
-* [https://github.com/Jammy2211/PyAutoArray/tree/feature/jax_wrapper](https://github.com/Jammy2211/PyAutoArray/tree/feature/jax_wrapper)  
-* [https://github.com/Jammy2211/PyAutoGalaxy/tree/feature/jax_wrapper](https://github.com/Jammy2211/PyAutoGalaxy/tree/feature/jax_wrapper)
+* <https://github.com/rhayes777/PyAutoFit/tree/feature/jax_assert_disable>
+* <https://github.com/Jammy2211/PyAutoArray/tree/feature/jax_wrapper>
+* <https://github.com/Jammy2211/PyAutoGalaxy/tree/feature/jax_wrapper>
 
 ## JAX Test
 
-We have test repositories for testing and development, so you should go ahead and clone the autogalaxy_workspace_test: [https://github.com/Jammy2211/autogalaxy_workspace_test](https://github.com/Jammy2211/autogalaxy_workspace_test)
+We have test repositories for testing and development, so you should go ahead and clone the autogalaxy_workspace_test: <https://github.com/Jammy2211/autogalaxy_workspace_test>
 
 This test workspace has the first example script we will use to start testing JAX calls and GPU run times:  
-[https://github.com/Jammy2211/autogalaxy_workspace_test/blob/master/jax/func_grad.py](https://github.com/Jammy2211/autogalaxy_workspace_test/blob/master/jax/func_grad.py)
+<https://github.com/Jammy2211/autogalaxy_workspace_test/blob/master/jax/func_grad.py>
 
 The JAX test above goes via the source code, which at first is a bit of a pain to navigate. I have therefore written a self contained piece of code, whereby I extracted the source function calls and wrote them sequentially as a simpler starting point:
 
-[https://github.com/Jammy2211/autogalaxy_workspace_test/blob/master/jax_examples/start/func_grad_manual.py](https://github.com/Jammy2211/autogalaxy_workspace_test/blob/master/jax_examples/start/func_grad_manual.py)
+<https://github.com/Jammy2211/autogalaxy_workspace_test/blob/master/jax_examples/start/func_grad_manual.py>
 
 **This currently raises an exception… which I am unsure how to fix, so fixing this is probably our first goal!**
 
-Basically, this script calls the likelihood function describes in the step-by-step guide here ([https://github.com/Jammy2211/autogalaxy_workspace/blob/main/notebooks/advanced/log_likelihood_function/imaging/light_profile/log_likelihood_function.ipynb](https://github.com/Jammy2211/autogalaxy_workspace/blob/main/notebooks/advanced/log_likelihood_function/imaging/light_profile/log_likelihood_function.ipynb)) but puts it through a JAX grad function, which does two things:
+Basically, this script calls the likelihood function describes in the step-by-step guide here (<https://github.com/Jammy2211/autogalaxy_workspace/blob/main/notebooks/advanced/log_likelihood_function/imaging/light_profile/log_likelihood_function.ipynb>) but puts it through a JAX grad function, which does two things:
 
 ## Next Steps
 
 Complete a simple conversion of numba code to JAX code described here:
 
-[https://github.com/Jammy2211/autogalaxy_workspace_test/blob/master/jax_examples/task_2_simple_conversions/func_grad_manual.py](https://github.com/Jammy2211/autogalaxy_workspace_test/blob/master/jax_examples/task_2_simple_conversions/func_grad_manual.py)
+<https://github.com/Jammy2211/autogalaxy_workspace_test/blob/master/jax_examples/task_2_simple_conversions/func_grad_manual.py>
 
 ## Useful Modules
 
-* [https://github.com/rhayes777/PyAutoFit/blob/feature/jax_wrapper/autofit/jax_wrapper.py](https://github.com/rhayes777/PyAutoFit/blob/feature/jax_assert_disable/autofit/jax_wrapper.py)  
-* [https://github.com/Jammy2211/PyAutoArray/blob/feature/jax_wrapper/autoarray/numpy_wrapper.py](https://github.com/Jammy2211/PyAutoArray/blob/feature/jax_wrapper/autoarray/numpy_wrapper.py)
+* <https://github.com/rhayes777/PyAutoFit/blob/feature/jax_wrapper/autofit/jax_wrapper.py>
+* <https://github.com/Jammy2211/PyAutoArray/blob/feature/jax_wrapper/autoarray/numpy_wrapper.py>
