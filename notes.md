@@ -62,8 +62,8 @@ Status:
 
 - all `PyAuto*`'s dependencies added.
 
-     > WARN These conda-packages will be overridden by pypi:
-     >   networkx, jsonpickle
+    > WARN These conda-packages will be overridden by pypi:
+    >        networkx, anesthetic, jsonpickle
 
 - [ ] setup `PyAuto*` as submodules and use editable dependencies documented in <https://pixi.sh/latest/reference/pixi_manifest/#pypi-dependencies>.
 
