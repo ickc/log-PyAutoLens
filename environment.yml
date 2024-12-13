@@ -12,18 +12,25 @@ dependencies:
 - dill >=0.3.1.1
 - dynesty ==2.1.4
 - emcee >=3.1.6
+- getdist ==1.4
 - h5py >=3.11.0
 - ipython >=5.3.0
+- jax >=0.4.13
+- jaxlib >=0.4.13
 - jinja2 >=2.9.6
 - jsonpickle >=1.4.1
 - matplotlib >=3.7.0
 - nautilus-sampler ==1.0.4
 - networkx >=1.11
+- numba *
 - numpy >=1.24.0,<=2.0.1
 - numpydoc >=1.0.0
 - psutil ==6.1.0
+- pylops >=1.10.0,<=2.3.1
+- pynufft *
 - pyprojroot ==0.2.0
 - pyswarms ==1.3.0
+- python-xxhash <=3.4.1
 - pyyaml >=6.0.1
 - scikit-image <=0.24.0
 - scikit-learn <=1.5.1
@@ -32,7 +39,8 @@ dependencies:
 - threadpoolctl >=3.1.0,<=3.2.0
 - timeout-decorator ==0.5.0
 - typing_inspect >=0.4.0
-- python-xxhash <=3.4.1
+- ultranest ==3.6.2
+- zeus-mcmc ==2.5.4
 - pip
 - pip:
   - colossus==1.3.1
