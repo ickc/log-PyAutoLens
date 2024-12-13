@@ -69,6 +69,12 @@ Status:
 
 - [ ] run tests
 
+## Issues
+
+From @Jam:
+
+> The way I approach this is the project has a depedency hierarcrchy of PyAutoFit -> PyAutoArray -> PyAutoGalaxy -> PyAutoLens, so post it in the highest project the issue is relevent.
+
 # DiRAC COSMA
 
 ## Links
