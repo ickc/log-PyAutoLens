@@ -1,0 +1,28 @@
+[submodule "packages/autogalaxy_workspace"]
+	path = packages/autogalaxy_workspace
+	url = https://github.com/Jammy2211/autogalaxy_workspace.git
+	branch = main
+[submodule "packages/PyAutoArray"]
+	path = packages/PyAutoArray
+	url = https://github.com/Jammy2211/PyAutoArray.git
+	branch = main
+[submodule "packages/PyAutoGalaxy"]
+	path = packages/PyAutoGalaxy
+	url = https://github.com/Jammy2211/PyAutoGalaxy.git
+	branch = main
+[submodule "packages/PyAutoLens"]
+	path = packages/PyAutoLens
+	url = https://github.com/Jammy2211/PyAutoLens.git
+	branch = main
+[submodule "packages/PyAutoConf"]
+	path = packages/PyAutoConf
+	url = https://github.com/rhayes777/PyAutoConf.git
+	branch = main
+[submodule "packages/PyAutoFit"]
+	path = packages/PyAutoFit
+	url = https://github.com/rhayes777/PyAutoFit.git
+	branch = main
+[submodule "packages/autogalaxy_workspace_test"]
+	path = packages/autogalaxy_workspace_test
+	url = https://github.com/Jammy2211/autogalaxy_workspace_test.git
+	branch = master
