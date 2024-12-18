@@ -26,3 +26,7 @@
 	path = packages/autogalaxy_workspace_test
 	url = https://github.com/Jammy2211/autogalaxy_workspace_test.git
 	branch = master
+[submodule "packages/dirac_rse_interferometer"]
+	path = packages/dirac_rse_interferometer
+	url = https://github.com/Jammy2211/dirac_rse_interferometer.git
+	branch = main
