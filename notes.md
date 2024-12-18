@@ -5,48 +5,31 @@
 - Steven is working on this project
 - end in Feb 21st 2025
 - join
-    - Slack
-    - bi-weekly meeting on the science of lensing, occasionally jax
-    - DIRAC cluster?
+    - [x] Slack
+    - [ ] bi-weekly meeting on the science of lensing, occasionally jax
+    - [x] DIRAC cluster?
 - people:
     - James (Durham)
     - Gokmen
     - Coleman is the one to ask about jax
-- schedule a weekly meeting in the week of 12/9
-- learn jax
+    - Rich developed PyAutoLens from scratch for 6-7 years
+- [x] schedule a weekly meeting in the week of 12/9
+- [ ] learn jax @inprogress
 
 # Questions
 
-- these are deleted:
-    https://github.com/Jammy2211/autogalaxy_workspace/blob/release/introduction.ipynb
-    
-    https://github.com/Jammy2211/autogalaxy_workspace/blob/release/notebooks/overview/overview_1_galaxies.ipynb
-    
-    https://github.com/Jammy2211/autogalaxy_workspace/blob/release/notebooks/overview/overview_2_fit.ipynb
-    
-    https://github.com/Jammy2211/autogalaxy_workspace/blob/release/notebooks/overview/overview_3_modeling.ipynb
+- mentioned 4 notebooks, last 2 repeated:
+    * [autogalaxy\_workspace/notebooks/advanced/log\_likelihood\_function/imaging/light\_profile/log\_likelihood\_function.ipynb at release · Jammy2211/autogalaxy\_workspace](https://github.com/Jammy2211/autogalaxy\_workspace/blob/release/notebooks/advanced/log\_likelihood\_function/imaging/light\_profile/log\_likelihood\_function.ipynb)
+    * [autogalaxy\_workspace/notebooks/advanced/log\_likelihood\_function/imaging/linear\_light\_profile at release · Jammy2211/autogalaxy\_workspace](https://github.com/Jammy2211/autogalaxy\_workspace/tree/release/notebooks/advanced/log\_likelihood\_function/imaging/linear\_light\_profile)
+    * [autogalaxy\_workspace/notebooks/advanced/log\_likelihood\_function/interferometer/light\_profile/log\_likelihood\_function.ipynb at release · Jammy2211/autogalaxy\_workspace](https://github.com/Jammy2211/autogalaxy\_workspace/blob/release/notebooks/advanced/log\_likelihood\_function/interferometer/light\_profile/log\_likelihood\_function.ipynb)
 
-    https://github.com/Jammy2211/autogalaxy_workspace/blob/main/notebooks/imaging/advanced/log_likelihood_function/parametric.ipynb
+# TODO
 
-    https://github.com/Jammy2211/autogalaxy_workspace/blob/main/notebooks/imaging/advanced/log_likelihood_function/parametric/contributor_guide.ipynb
-
-    https://github.com/Jammy2211/autogalaxy_workspace_test/blob/master/jax/func_grad.py
-
-    https://github.com/Jammy2211/autogalaxy_workspace_test/blob/master/jax/func_grad_manual.py
-
-    https://github.com/Jammy2211/autogalaxy_workspace/tree/main/notebooks/imaging/advanced/log_likelihood_function/parametric
-
-- "but puts it through a JAX grad function, which does two things"... then?
-
-- Was the note written for someone else earlier? What has changed since then?
-
-- Why wrappers?
-
-- What is "workspace" as in `autogalaxy_workspace_test` or `autogalaxy_workspace`?
-
-TODO:
-
-- [ ] Go through <https://github.com/Jammy2211/autogalaxy_workspace_test/blob/master/jax_examples/task_2_simple_conversions/func_grad_manual.py>
+- Go through
+    - [ ] <https://github.com/Jammy2211/autogalaxy_workspace_test/blob/master/jax_examples/task_2_simple_conversions/func_grad_manual.py>
+    * [ ] [autogalaxy\_workspace/notebooks/advanced/log\_likelihood\_function/imaging/light\_profile/log\_likelihood\_function.ipynb at release · Jammy2211/autogalaxy\_workspace](https://github.com/Jammy2211/autogalaxy\_workspace/blob/release/notebooks/advanced/log\_likelihood\_function/imaging/light\_profile/log\_likelihood\_function.ipynb)
+    * [ ] [autogalaxy\_workspace/notebooks/advanced/log\_likelihood\_function/imaging/linear\_light\_profile at release · Jammy2211/autogalaxy\_workspace](https://github.com/Jammy2211/autogalaxy\_workspace/tree/release/notebooks/advanced/log\_likelihood\_function/imaging/linear\_light\_profile)
+    * [ ] [autogalaxy\_workspace/notebooks/advanced/log\_likelihood\_function/interferometer/light\_profile/log\_likelihood\_function.ipynb at release · Jammy2211/autogalaxy\_workspace](https://github.com/Jammy2211/autogalaxy\_workspace/blob/release/notebooks/advanced/log\_likelihood\_function/interferometer/light\_profile/log\_likelihood\_function.ipynb)
 
 # PyAutoLens Intro
 
@@ -65,15 +48,25 @@ Status:
     > WARN These conda-packages will be overridden by pypi:
     >        networkx, anesthetic, jsonpickle
 
-- [ ] setup `PyAuto*` as submodules and use editable dependencies documented in <https://pixi.sh/latest/reference/pixi_manifest/#pypi-dependencies>.
+- [x] setup `PyAuto*` as submodules and use editable dependencies documented in <https://pixi.sh/latest/reference/pixi_manifest/#pypi-dependencies>.
 
-- [ ] run tests
+    ```bash
+    git submodule add -b main https://github.com/Jammy2211/autogalaxy_workspace.git packages/autogalaxy_workspace
+    git submodule add -b main https://github.com/Jammy2211/PyAutoArray.git packages/PyAutoArray
+    git submodule add -b main https://github.com/Jammy2211/PyAutoGalaxy.git packages/PyAutoGalaxy
+    git submodule add -b main https://github.com/Jammy2211/PyAutoLens.git packages/PyAutoLens
+    git submodule add -b main https://github.com/rhayes777/PyAutoConf.git packages/PyAutoConf
+    git submodule add -b main https://github.com/rhayes777/PyAutoFit.git packages/PyAutoFit
+    git submodule add -b master https://github.com/Jammy2211/autogalaxy_workspace_test.git packages/autogalaxy_workspace_test
+    ```
+
+- [x] run tests
 
 ## Issues
 
 From @Jam:
 
-> The way I approach this is the project has a depedency hierarcrchy of PyAutoFit -> PyAutoArray -> PyAutoGalaxy -> PyAutoLens, so post it in the highest project the issue is relevent.
+> The way I approach this is the project has a dependency hierarchy of PyAutoFit -> PyAutoArray -> PyAutoGalaxy -> PyAutoLens, so post it in the highest project the issue is relevant.
 
 # DiRAC COSMA
 
@@ -127,16 +120,4 @@ LINKS=(.apptainer .cache .conda .local .spack)
 for LINK in "${LINKS[@]}"; do
     ln -s "$TARGET_DIR/$LINK" "$LINK"
 done
-```
-
-### Git submodules
-
-```bash
-git submodule add -b main https://github.com/Jammy2211/autogalaxy_workspace.git packages/autogalaxy_workspace
-git submodule add -b main https://github.com/Jammy2211/PyAutoArray.git packages/PyAutoArray
-git submodule add -b main https://github.com/Jammy2211/PyAutoGalaxy.git packages/PyAutoGalaxy
-git submodule add -b main https://github.com/Jammy2211/PyAutoLens.git packages/PyAutoLens
-git submodule add -b main https://github.com/rhayes777/PyAutoConf.git packages/PyAutoConf
-git submodule add -b main https://github.com/rhayes777/PyAutoFit.git packages/PyAutoFit
-git submodule add -b master https://github.com/Jammy2211/autogalaxy_workspace_test.git packages/autogalaxy_workspace_test
 ```
