@@ -37,6 +37,11 @@ From @Jam:
 
 > Busy day so will send expanded instructions later but this is the Google Doc which explains the project layout and how to get started:[https://docs.google.com/document/d/1jGlxdnpjX5t4rXKBc0hrRx9vWcgXXnoR_5RY2nWTeUs/edit?usp=sharing](https://docs.google.com/document/d/1jGlxdnpjX5t4rXKBc0hrRx9vWcgXXnoR_5RY2nWTeUs/edit?usp=sharing)The project is spread out over multiple repos so takes a bit of getting used to.This is the simple task which is probably a good starting point as an example of trying to convert code from numba to JAX:[https://github.com/Jammy2211/autogalaxy_workspace_test/tree/master/jax_examples/task_2_simple_conversions](https://github.com/Jammy2211/autogalaxy_workspace_test/tree/master/jax_examples/task_2_simple_conversions)
 
+- branch: feature/jax_wrapper for JAX
+- E.g. PR to fix JAX wrapper: https://github.com/Jammy2211/PyAutoArray/pull/156
+- [x] Work out of source code, porting, then worry about putting it back later (get initial out of source code repo from @jam)
+- [x] get notebooks, papers from @jam
+
 ## Environment
 
 I created a reproducible-ish environment using pixi.
