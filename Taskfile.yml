@@ -5,6 +5,10 @@ tasks:
     desc: "Pull all git submodules"
     cmds:
       - git submodule update --init --recursive
+  update:
+    desc: "Update all git submodules"
+    cmds:
+      - git submodule update --recursive --remote
   export:
     desc: "Export a conda environment file."
     cmds:
