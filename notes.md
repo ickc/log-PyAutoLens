@@ -7,6 +7,7 @@
 - join
     - [x] Slack
     - [ ] bi-weekly meeting on the science of lensing, occasionally jax
+        - Gokmen will forward the Zoom link to me
     - [x] DIRAC cluster?
 - people:
     - James (Durham)
@@ -15,6 +16,7 @@
     - Rich developed PyAutoLens from scratch for 6-7 years
 - [x] schedule a weekly meeting in the week of 12/9
 - [ ] learn jax @inprogress
+- Gokmen will ask James about tasks split between us
 
 # Questions
 
