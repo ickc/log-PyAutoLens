@@ -84,6 +84,10 @@ From @Jam:
 
 > The way I approach this is the project has a dependency hierarchy of PyAutoFit -> PyAutoArray -> PyAutoGalaxy -> PyAutoLens, so post it in the highest project the issue is relevant.
 
+### Potential issues
+
+- <https://github.com/Jammy2211/PyAutoArray/blob/main/autoarray/numba_util.py>: try and except requires better handlings
+
 # DiRAC COSMA
 
 ## Links
