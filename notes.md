@@ -32,6 +32,14 @@
     * [ ] [autogalaxy\_workspace/notebooks/advanced/log\_likelihood\_function/imaging/light\_profile/log\_likelihood\_function.ipynb at release · Jammy2211/autogalaxy\_workspace](https://github.com/Jammy2211/autogalaxy\_workspace/blob/release/notebooks/advanced/log\_likelihood\_function/imaging/light\_profile/log\_likelihood\_function.ipynb)
     * [ ] [autogalaxy\_workspace/notebooks/advanced/log\_likelihood\_function/imaging/linear\_light\_profile at release · Jammy2211/autogalaxy\_workspace](https://github.com/Jammy2211/autogalaxy\_workspace/tree/release/notebooks/advanced/log\_likelihood\_function/imaging/linear\_light\_profile)
     * [ ] [autogalaxy\_workspace/notebooks/advanced/log\_likelihood\_function/interferometer/light\_profile/log\_likelihood\_function.ipynb at release · Jammy2211/autogalaxy\_workspace](https://github.com/Jammy2211/autogalaxy\_workspace/blob/release/notebooks/advanced/log\_likelihood\_function/interferometer/light\_profile/log\_likelihood\_function.ipynb)
+- go through <https://github.com/Jammy2211/dirac_rse_interferometer>
+    > At the moment, you only care about this script, which shows how a simple dataset we are going to fit is simulated:
+    >
+    > https://github.com/Jammy2211/dirac_rse_interferometer/blob/main/simulators/sma.py
+    >
+    > And this script, which illustrates the function we discussed which can currently take 2+ weeks to run:
+    >
+    > https://github.com/Jammy2211/dirac_rse_interferometer/blob/main/w_tilde.py
 
 # PyAutoLens Intro
 
