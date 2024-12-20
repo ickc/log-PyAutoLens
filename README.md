@@ -1,4 +1,10 @@
-# Overview
+A logbook for the project "DiRAC: revealing the nature of dark matter with the James Webb space telescope and JAX".
+
+This should contains all the notes about the project, notebooks and scripts I experimented with, environment(s) I setup for the project, which includes packages related to this project as submodules
+
+Contribution worthy contents should not resides here, but as PRs to respective repos.
+
+# Project overview
 
 - DiRAC: revealing the nature of dark matter with the James Webb space telescope and JAX
 - aim: add JAX support in PyAutoLens
