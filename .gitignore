@@ -1,4 +1,6 @@
 .nfs*
+# binary files
+*.h5
 # we keep python scripts exported from notebooks only
 *.ipynb
 # pixi environments
