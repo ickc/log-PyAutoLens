@@ -45,7 +45,7 @@ Contribution worthy contents should not resides here, but as PRs to respective r
     >
     > And this script, which illustrates the function we discussed which can currently take 2+ weeks to run:
     >
-    > https://github.com/Jammy2211/dirac_rse_interferometer/blob/main/w_tilde.py
+    > - [x] https://github.com/Jammy2211/dirac_rse_interferometer/blob/main/w_tilde.py
 
 # PyAutoLens Intro
 
