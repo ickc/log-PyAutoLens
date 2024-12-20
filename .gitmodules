@@ -30,3 +30,7 @@
 	path = packages/dirac_rse_interferometer
 	url = https://github.com/Jammy2211/dirac_rse_interferometer.git
 	branch = main
+[submodule "packages/autolens_workspace"]
+	path = packages/autolens_workspace
+	url = https://github.com/Jammy2211/autolens_workspace.git
+	branch = main
