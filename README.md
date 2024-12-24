@@ -49,6 +49,24 @@ Contribution worthy contents should not resides here, but as PRs to respective r
     > https://github.com/Jammy2211/dirac_rse_interferometer/blob/main/w_tilde.py
 
     - [x] https://github.com/Jammy2211/dirac_rse_interferometer/blob/main/w_tilde.py
+
+        $$\begin{aligned}
+        \mathbf{V}_r &: \text{Real visibilities vector} \\
+        \mathbf{N}_r &: \text{Real noise map vector} \\
+        \mathbf{u} &: \text{UV wavelengths matrix} \\
+        \mathbf{g} &: \text{Grid radians coordinates matrix} \\
+        M &: \text{Number of image pixels} \\
+        N &: \text{Number of visibility points}
+        \end{aligned}$$
+
+        $$\tilde{w}_{\text{data},i} = \sum_{j=1}^N \left(\frac{N_{r,j}^2}{V_{r,j}}\right)^2 \cos\left(2\pi(g_{i,1}u_{j,0} + g_{i,0}u_{j,1})\right)$$
+
+        where $$i \in [0,M-1]$$ and output is vector $$\tilde{\mathbf{w}}_\text{data} \in \mathbb{R}^M$$
+
+    - [x] https://github.com/Jammy2211/dirac_rse_interferometer/blob/main/w_tilde/w_tilde_curvature.py
+
+        $$W̃_{ij} = \sum_{k=1}^N \frac{1}{n_k^2} \cos(2\pi[(g_{i1} - g_{j1})u_{k0} + (g_{i0} - g_{j0})u_{k1}])$$
+
     - [ ] https://github.com/Jammy2211/dirac_rse_interferometer/blob/main/simulators/sma.py
         - seems to be from https://github.com/Jammy2211/autolens_workspace/blob/main/notebooks/simulators/interferometer/instruments/sma.ipynb
 
