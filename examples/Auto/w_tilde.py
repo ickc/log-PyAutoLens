@@ -93,6 +93,9 @@ def w_tilde_data_interferometer_from(
         @jit("float64[::1](float64[::1], float64[::1], float64[:,::1], float64[:,::1], int64[:,::1])", nopython=True, nogil=True, parallel=True)
     but numba doesn't like the combination of flip and reshape there.
 
+    .. math::
+        \tilde{w}_{\text{data},i} = \sum_{j=1}^N \left(\frac{N_{r,j}^2}{V_{r,j}}\right)^2 \cos\left(2\pi(g_{i,1}u_{j,0} + g_{i,0}u_{j,1})\right)
+
     Parameters
     ----------
     visibilities_real : ndarray, shape (N,), dtype=float64
@@ -100,9 +103,7 @@ def w_tilde_data_interferometer_from(
     noise_map_real : ndarray, shape (N,), dtype=float64
         The two dimensional masked noise-map of values which `w_tilde_data` is computed from.
     uv_wavelengths : ndarray, shape (N, 2), dtype=float64
-        The UV wavelengths for the visibility calculations.
     grid_radians_slim : ndarray, shape (M, 2), dtype=float64
-        The grid in radians in slim format.
     native_index_for_slim_index : ndarray, shape (M, 2), dtype=int64
         An array that maps pixels from the slimmed array to the native array.
 
@@ -113,19 +114,19 @@ def w_tilde_data_interferometer_from(
         efficient calculation of the data vector.
     """
     return (
-        # (1, N)
+        # (1, j∊N)
         jnp.square(jnp.square(noise_map_real) / visibilities_real).reshape(1, -1) *
         jnp.cos(
             (2.0 * jnp.pi) *
-            # (M, N)
+            # (i∊M, j∊N)
             (
-                # (M, 1, 2)
+                # (i∊M, 1, 2)
                 jnp.flip(grid_radians_slim.reshape(-1, 1, 2), 2) *
-                # (1, N, 2)
+                # (1, j∊N, 2)
                 uv_wavelengths.reshape(1, -1, 2)
             ).sum(axis=2)
         )
-    ).sum(axis=1)
+    ).sum(axis=1)  # sum over j
 
 # %%
 w_tilde = w_tilde_data_interferometer_from(
