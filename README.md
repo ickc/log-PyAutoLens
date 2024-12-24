@@ -35,9 +35,10 @@ Contribution worthy contents should not resides here, but as PRs to respective r
 
 - Go through
     - [x] <https://github.com/Jammy2211/autogalaxy_workspace_test/blob/master/jax_examples/task_2_simple_conversions/func_grad_manual.py>
-    * [ ] [autogalaxy\_workspace/notebooks/advanced/log\_likelihood\_function/imaging/light\_profile/log\_likelihood\_function.ipynb at release · Jammy2211/autogalaxy\_workspace](https://github.com/Jammy2211/autogalaxy\_workspace/blob/release/notebooks/advanced/log\_likelihood\_function/imaging/light\_profile/log\_likelihood\_function.ipynb)
-    * [ ] [autogalaxy\_workspace/notebooks/advanced/log\_likelihood\_function/imaging/linear\_light\_profile at release · Jammy2211/autogalaxy\_workspace](https://github.com/Jammy2211/autogalaxy\_workspace/tree/release/notebooks/advanced/log\_likelihood\_function/imaging/linear\_light\_profile)
-    * [ ] [autogalaxy\_workspace/notebooks/advanced/log\_likelihood\_function/interferometer/light\_profile/log\_likelihood\_function.ipynb at release · Jammy2211/autogalaxy\_workspace](https://github.com/Jammy2211/autogalaxy\_workspace/blob/release/notebooks/advanced/log\_likelihood\_function/interferometer/light\_profile/log\_likelihood\_function.ipynb)
+    * [ ] [autogalaxy_workspace/notebooks/advanced/log_likelihood_function/imaging/light_profile/log_likelihood_function.ipynb at release · Jammy2211/autogalaxy_workspace](https://github.com/Jammy2211/autogalaxy_workspace/blob/release/notebooks/advanced/log_likelihood_function/imaging/light_profile/log_likelihood_function.ipynb)
+    * [ ] [autogalaxy_workspace/notebooks/advanced/log_likelihood_function/imaging/linear_light_profile at release · Jammy2211/autogalaxy_workspace](https://github.com/Jammy2211/autogalaxy_workspace/tree/release/notebooks/advanced/log_likelihood_function/imaging/linear_light_profile)
+    * [ ] [autogalaxy_workspace/notebooks/advanced/log_likelihood_function/interferometer/light_profile/log_likelihood_function.ipynb at release · Jammy2211/autogalaxy_workspace](https://github.com/Jammy2211/autogalaxy_workspace/blob/release/notebooks/advanced/log_likelihood_function/interferometer/light_profile/log_likelihood_function.ipynb)
+    * [ ] [autogalaxy_workspace/notebooks/advanced/log_likelihood_function/imaging/pixelization/log_likelihood_function.ipynb at release · Jammy2211/autogalaxy_workspace](https://github.com/Jammy2211/autogalaxy_workspace/blob/release/notebooks/advanced/log_likelihood_function/imaging/pixelization/log_likelihood_function.ipynb)?
 - go through <https://github.com/Jammy2211/dirac_rse_interferometer>
     > At the moment, you only care about this script, which shows how a simple dataset we are going to fit is simulated:
     >
@@ -50,6 +51,16 @@ Contribution worthy contents should not resides here, but as PRs to respective r
     - [x] https://github.com/Jammy2211/dirac_rse_interferometer/blob/main/w_tilde.py
     - [ ] https://github.com/Jammy2211/dirac_rse_interferometer/blob/main/simulators/sma.py
         - seems to be from https://github.com/Jammy2211/autolens_workspace/blob/main/notebooks/simulators/interferometer/instruments/sma.ipynb
+
+> Another interesting question which could prove a problem with the full JAX implementation  is how to get a 2d delaunay mesh to work, which currently uses scipy https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.Delaunay.html
+> We also use a voronoi mesh with 2d natural neighbour interpolation.
+> My understanding is getting these to run in jax could be very hard, but it would be good to scope out if it looks at all feasible.
+> https://github.com/Jammy2211/PyAutoArray/blob/main/autoarray/structures/mesh/triangulation_2d.py
+> triangulation_2d.py
+> 
+> But the first round of JAX conversions I'll sort the examples for don't need these meshes, that kind of the problem we face after getting the easier to convert code sorted.
+> 
+> It may also make sense to implement them via this tool https://arxiv.org/abs/2403.08847 first, which will have limitations, and worry about a full jax implementation later
 
 # PyAutoLens Intro
 
@@ -152,3 +163,7 @@ for LINK in "${LINKS[@]}"; do
     ln -s "$TARGET_DIR/$LINK" "$LINK"
 done
 ```
+
+# References
+
+> I have not read all that much so can't recommend a book but have seen this github recommended: [ratt-ru/foi-course: Fundamentals of Radio Interferometry and Aperture Synthesis Book](https://github.com/ratt-ru/foi-course)
