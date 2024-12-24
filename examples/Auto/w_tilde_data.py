@@ -307,5 +307,5 @@ native_index_for_slim_index = np.random.randint(0, M, size=(M, 2))
 %timeit w_tilde_data_interferometer_from_numba(visibilities_real, noise_map_real, uv_wavelengths, grid_radians_slim, native_index_for_slim_index)
 
 # %%
-%timeit w_tilde_data_interferometer_from_jax(visibilities_real, noise_map_real, uv_wavelengths, grid_radians_slim, native_index_for_slim_index)
+%timeit w_tilde_data_interferometer_from_jax(visibilities_real, noise_map_real, uv_wavelengths, grid_radians_slim, native_index_for_slim_index).block_until_ready()
 # %%
