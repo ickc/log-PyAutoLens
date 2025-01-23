@@ -33,8 +33,10 @@ Contribution worthy contents should not resides here, but as PRs to respective r
 
 # TODO
 
-- [ ] Update duplicated code from <https://github.com/Jammy2211/dirac_rse_interferometer/> to this repo
-- [ ] set up benchmark to compare implementations
+- [ ] refactor ported functions per implementation
+    - [ ] setup unit test
+    - [ ] set up benchmark to compare implementations
+    - [ ] Update duplicated code from <https://github.com/Jammy2211/dirac_rse_interferometer/> to this repo
 - [ ] explore calculation of symmetric matrix under JAX framework
 - Go through
     - [x] <https://github.com/Jammy2211/autogalaxy_workspace_test/blob/master/jax_examples/task_2_simple_conversions/func_grad_manual.py>
