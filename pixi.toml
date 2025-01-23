@@ -64,3 +64,4 @@ autofit = { path = "packages/PyAutoFit", editable = true}
 autoarray = { path = "packages/PyAutoArray", editable = true}
 autogalaxy = { path = "packages/PyAutoGalaxy", editable =   true}
 autolens = { path = "packages/PyAutoLens", editable =   true}
+autojax = { path = "packages/autojax", editable =   true}
