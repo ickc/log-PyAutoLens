@@ -52,3 +52,4 @@ dependencies:
   - -e packages/PyAutoArray
   - -e packages/PyAutoGalaxy
   - -e packages/PyAutoLens
+  - -e packages/autojax
