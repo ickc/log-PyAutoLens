@@ -22,16 +22,12 @@ tasks:
     desc: "Show the status of all git submodules"
     cmds:
       - git submodule foreach 'git remote -v; git status'
+  branch:
+    desc: "Show branches each submodule is on"
+    cmds:
+      - git submodule foreach 'git rev-parse --abbrev-ref HEAD'
 
   export:
     desc: "Export a conda environment file."
     cmds:
       - pixi project export conda-environment environment.yml
-  branch:
-    desc: "Show branches each submodule is on"
-    cmds:
-      - git submodule foreach 'git rev-parse --abbrev-ref HEAD'
-  remote:
-    desc: "Show remotes each submodule is on"
-    cmds:
-      - git submodule foreach 'git remote -v'
