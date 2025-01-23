@@ -18,7 +18,7 @@ def w_tilde_curvature_interferometer_from(
     uv_wavelengths: np.ndarray,
     grid_radians_slim: np.ndarray,
 ) -> np.ndarray:
-    """
+    r"""
     The matrix w_tilde is a matrix of dimensions [image_pixels, image_pixels] that encodes the NUFFT of every pair of
     image pixels given the noise map. This can be used to efficiently compute the curvature matrix via the mappings
     between image and source pixels, in a way that omits having to perform the NUFFT on every individual source pixel.
@@ -142,7 +142,7 @@ def w_tilde_curvature_interferometer_from_numba(
     uv_wavelengths: np.ndarray[tuple[int, int], np.float64],
     grid_radians_slim: np.ndarray[tuple[int, int], np.float64],
 ) -> np.ndarray[tuple[int, int], np.float64]:
-    """
+    r"""
     The matrix w_tilde is a matrix of dimensions [image_pixels, image_pixels] that encodes the NUFFT of every pair of
     image pixels given the noise map. This can be used to efficiently compute the curvature matrix via the mappings
     between image and source pixels, in a way that omits having to perform the NUFFT on every individual source pixel.
@@ -191,17 +191,13 @@ def w_tilde_curvature_interferometer_from_numba(
     ).sum(2)  # sum over k
 
 # %%
-import jax
-import jax.numpy as jnp
-
-
 @jit
 def w_tilde_curvature_interferometer_from_jax(
     noise_map_real: np.ndarray[tuple[int], np.float64],
     uv_wavelengths: np.ndarray[tuple[int, int], np.float64],
     grid_radians_slim: np.ndarray[tuple[int, int], np.float64],
 ) -> np.ndarray[tuple[int, int], np.float64]:
-    """
+    r"""
     The matrix w_tilde is a matrix of dimensions [image_pixels, image_pixels] that encodes the NUFFT of every pair of
     image pixels given the noise map. This can be used to efficiently compute the curvature matrix via the mappings
     between image and source pixels, in a way that omits having to perform the NUFFT on every individual source pixel.
