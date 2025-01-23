@@ -8,8 +8,34 @@ tasks:
   update:
     desc: "Update all git submodules"
     cmds:
-      - git submodule update --recursive --remote
+      - |
+        git submodule foreach '
+          # First checkout the appropriate branch
+          if [[ $name == "packages/autogalaxy_workspace_test" ]]; then
+            git checkout master;
+          else
+            git checkout main;
+          fi;
+          
+          # Then fetch from upstream if it exists, otherwise from origin
+          if git remote | grep -q "upstream"; then
+            echo "Fetching from upstream for $name";
+            git fetch upstream;
+          else
+            echo "Fetching from origin for $name";
+            git fetch origin;
+          fi
+        '
+
   export:
     desc: "Export a conda environment file."
     cmds:
       - pixi project export conda-environment environment.yml
+  branch:
+    desc: "Show branches each submodule is on"
+    cmds:
+      - git submodule foreach 'git rev-parse --abbrev-ref HEAD'
+  remote:
+    desc: "Show remotes each submodule is on"
+    cmds:
+      - git submodule foreach 'git remote -v'
