@@ -35,6 +35,7 @@ Contribution worthy contents should not resides here, but as PRs to respective r
 
 - [ ] refactor ported functions per implementation
     - [ ] setup unit test
+    - [ ] setup doc
     - [ ] set up benchmark to compare implementations
     - [ ] Update duplicated code from <https://github.com/Jammy2211/dirac_rse_interferometer/> to this repo
 - [ ] explore calculation of symmetric matrix under JAX framework
