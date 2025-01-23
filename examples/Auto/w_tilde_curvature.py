@@ -8,8 +8,11 @@ import autolens as al
 
 from jax import jit
 import jax.numpy as jnp
+import jax
 
 import h5py
+
+jax.config.update("jax_enable_x64", True)
 
 # %%
 @numba_util.jit(nopython=True, parallel=True)

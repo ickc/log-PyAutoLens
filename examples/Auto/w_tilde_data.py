@@ -4,8 +4,13 @@ from __future__ import annotations
 import numpy as np
 from os import path
 
+import jax
+import jax.numpy as jnp
+
 from autoarray import numba_util
 import autolens as al
+
+jax.config.update("jax_enable_x64", True)
 
 # %%
 @numba_util.jit(nopython=True, parallel=True)
@@ -203,10 +208,6 @@ def w_tilde_data_interferometer_from_numba(
     ).sum(axis=1)  # sum over j
 
 # %%
-import jax
-import jax.numpy as jnp
-
-
 @jax.jit
 def w_tilde_data_interferometer_from_jax(
     visibilities_real: np.ndarray[tuple[int], np.float64],
