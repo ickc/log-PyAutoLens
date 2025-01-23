@@ -33,10 +33,12 @@ Contribution worthy contents should not resides here, but as PRs to respective r
 
 # TODO
 
-- [ ] refactor ported functions per implementation
-    - [ ] setup unit test
+- [x] refactor ported functions per implementation
+    - [x] setup unit test
     - [ ] setup doc
     - [ ] set up benchmark to compare implementations
+        - [ ] figure out why it is so slow on M4 Pro
+        - [ ] repeat previous rudimentary benchmark with float64 and double check for consistency
     - [ ] Update duplicated code from <https://github.com/Jammy2211/dirac_rse_interferometer/> to this repo
 - [ ] explore calculation of symmetric matrix under JAX framework
 - Go through
