@@ -120,6 +120,7 @@ Status:
     git submodule add -b main https://github.com/Jammy2211/dirac_rse_interferometer.git packages/dirac_rse_interferometer
     git submodule add -b master https://github.com/Jammy2211/autogalaxy_workspace_test.git packages/autogalaxy_workspace_test
     git submodule add -b main https://github.com/Jammy2211/autolens_workspace.git packages/autolens_workspace
+    git submodule add -b main git@github.com:ickc/python-autojax.git packages/autojax
     ```
 
 - [x] run tests

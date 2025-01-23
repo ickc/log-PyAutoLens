@@ -34,3 +34,7 @@
 	path = packages/autolens_workspace
 	url = https://github.com/Jammy2211/autolens_workspace.git
 	branch = main
+[submodule "packages/autojax"]
+	path = packages/autojax
+	url = git@github.com:ickc/python-autojax.git
+	branch = main
