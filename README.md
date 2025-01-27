@@ -33,11 +33,15 @@ Contribution worthy contents should not resides here, but as PRs to respective r
 
 # TODO
 
+- [ ] request projects dp004 and do018 for benchmarking via https://safe.epcc.ed.ac.uk/dirac @wait(for approval)
+    - [ ] setup /snap8/scratch/dp004/dc-kili1/RAC16/PyAutoLens
 - [x] refactor ported functions per implementation
     - [x] setup unit test
     - [ ] setup doc
     - [x] set up benchmark to compare implementations
         - [x] repeat previous rudimentary benchmark with float64 and double check for consistency
+        - [ ] compare results from pytest-benchmark to manually running it. The results seems wildly different
+            - perhaps write a manual benchmark with cli and ensure all available threads are used? Perhaps add a matmul in the beginning as a control.
     - [ ] Update duplicated code from <https://github.com/Jammy2211/dirac_rse_interferometer/> to this repo
 - [ ] explore calculation of symmetric matrix under JAX framework
 - Go through
@@ -86,6 +90,32 @@ Contribution worthy contents should not resides here, but as PRs to respective r
 > But the first round of JAX conversions I'll sort the examples for don't need these meshes, that kind of the problem we face after getting the easier to convert code sorted.
 > 
 > It may also make sense to implement them via this tool https://arxiv.org/abs/2403.08847 first, which will have limitations, and worry about a full jax implementation later
+
+---
+
+More notes from James on Jan 15th 2025:
+
+> In preparation for your return, I've put together a lot of materials to hopefully help you understand the problem better, rather than it just being a bunch of abstract numpy arrays which get mushed together.
+>
+> I would approach the work via the following steps (you may of done some):
+>
+> Read this example, which provides a very basic explanation of how a galaxy light profile is used to fit an image of a galaxy. This example uses imaging data, as opposed to interferometer data, because it is conceptually simpler and therefore a better starting point <https://github.com/Jammy2211/autogalaxy_workspace/blob/main/notebooks/advanced/log_likelihood_function/imaging/light_profile/log_likelihood_function.ipynb>
+>
+> 2. Read this example, which again using imaging data (for simplicity) explains how the problem can use linear algebra to solve for the light of the galaxy: <https://github.com/Jammy2211/autogalaxy_workspace/tree/main/notebooks/advanced/log_likelihood_function/imaging/linear_light_profile>
+>
+> 3. Read this example, which using imaging data explains how a pixelized reconstruction of a galaxy is performed: <https://github.com/Jammy2211/autogalaxy_workspace/blob/main/notebooks/advanced/log_likelihood_function/imaging/pixelization/log_likelihood_function.ipynb>
+>
+> 4. Read this example, which now shows how the simple galaxy light profile calculation is performed for interferometer data, which includes a non-uniform Fast Fourier transform: <https://github.com/Jammy2211/autogalaxy_workspace/blob/main/notebooks/advanced/log_likelihood_function/interferometer/light_profile/log_likelihood_function.ipynb>
+>
+> 5. Read this example, which explains how a pixelized source is performed on interferometer data: <https://github.com/Jammy2211/autogalaxy_workspace/blob/main/notebooks/advanced/log_likelihood_function/interferometer/pixelization/log_likelihood_function.ipynb>
+>
+> 6. Read this example, which explains how the "w-tilde" linear algebra formalism (which you converted some functions to JAX already for) changes the calculation in step 5: <https://github.com/Jammy2211/autogalaxy_workspace/blob/main/notebooks/advanced/log_likelihood_function/interferometer/pixelization/w_tilde.ipynb>
+>
+> 7. Begin to convert all these steps to JAX in the GitHub repo we are working on: <https://github.com/Jammy2211/dirac_rse_interferometer/blob/main/inversion/likelihood_function.py>
+>
+> By building up a deeper understanding of the problem end-to-end, I think we'll find the overall JAX implementation goes smoother, especially as we will have to slowly extend the code to encompass every step of the likelihood function by the end. However, for now, I think the task is broken down in a way that should be manageable.
+>
+> I will look at your PR's in the next few days and as I said above, I am working on making the JAX feature branch source code a lot more useable (e.g. refactor, fix unit tests) so we can easily incorporate your JAX'd code outside the source code into the source code without too many headaches.
 
 # PyAutoLens Intro
 
