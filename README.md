@@ -9,16 +9,16 @@ Contribution worthy contents should not resides here, but as PRs to respective r
 - DiRAC: revealing the nature of dark matter with the James Webb space telescope and JAX
 - aim: add JAX support in PyAutoLens
 - Steven is working on this project
-- end in Feb 21st 2025
+- end in Feb 21st 2025 (TBD: extended to March 2025)
 - join
     - [x] Slack
-    - [ ] bi-weekly meeting on the science of lensing, occasionally jax
+    - [x] bi-weekly meeting on the science of lensing, occasionally jax
         - Gokmen will forward the Zoom link to me
     - [x] DIRAC cluster?
 - people:
-    - James (Durham)
-    - Gokmen
-    - Coleman is the one to ask about jax
+    - James Nightingale (Durham)
+    - Gokmen Kilic
+    - Coleman Krawczyk is the one to ask about jax
     - Rich developed PyAutoLens from scratch for 6-7 years
 - [x] schedule a weekly meeting in the week of 12/9
 - [ ] learn jax @inprogress
@@ -99,7 +99,7 @@ More notes from James on Jan 15th 2025:
 >
 > I would approach the work via the following steps (you may of done some):
 >
-> Read this example, which provides a very basic explanation of how a galaxy light profile is used to fit an image of a galaxy. This example uses imaging data, as opposed to interferometer data, because it is conceptually simpler and therefore a better starting point <https://github.com/Jammy2211/autogalaxy_workspace/blob/main/notebooks/advanced/log_likelihood_function/imaging/light_profile/log_likelihood_function.ipynb>
+> 1. Read this example, which provides a very basic explanation of how a galaxy light profile is used to fit an image of a galaxy. This example uses imaging data, as opposed to interferometer data, because it is conceptually simpler and therefore a better starting point <https://github.com/Jammy2211/autogalaxy_workspace/blob/main/notebooks/advanced/log_likelihood_function/imaging/light_profile/log_likelihood_function.ipynb>
 >
 > 2. Read this example, which again using imaging data (for simplicity) explains how the problem can use linear algebra to solve for the light of the galaxy: <https://github.com/Jammy2211/autogalaxy_workspace/tree/main/notebooks/advanced/log_likelihood_function/imaging/linear_light_profile>
 >
