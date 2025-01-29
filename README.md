@@ -9,7 +9,7 @@ Contribution worthy contents should not resides here, but as PRs to respective r
 - DiRAC: revealing the nature of dark matter with the James Webb space telescope and JAX
 - aim: add JAX support in PyAutoLens
 - Steven is working on this project
-- end in Feb 21st 2025 (TBD: extended to March 2025)
+- end in March 7th 2025
 - join
     - [x] Slack
     - [x] bi-weekly meeting on the science of lensing, occasionally jax
