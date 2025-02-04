@@ -193,6 +193,28 @@ From @Jam:
 
 > The way I approach this is the project has a dependency hierarchy of PyAutoFit -> PyAutoArray -> PyAutoGalaxy -> PyAutoLens, so post it in the highest project the issue is relevant.
 
+### Chi-square bug
+
+There seems something wrong with the following definition of chi-square:
+
+```py
+chi_squared_term_1 = np.linalg.multi_dot(
+    [
+        mapping_matrix.T,  # NOTE: shape = (N, )
+        w_tilde,  # NOTE: shape = (N, N)
+        mapping_matrix,
+    ]
+)
+
+chi_squared_term_2 = -np.multiply(
+    2.0, np.dot(mapping_matrix.T, dataset.w_tilde.dirty_image)
+)  # Need to double check dirty_image is the right input.
+
+chi_squared = chi_squared_term_1 + chi_squared_term_2
+```
+
+The dimensions are wrong (these are not scalar) and also the 1st term is defined as curvature_matrix earlier.
+
 ### Potential issues
 
 - <https://github.com/Jammy2211/PyAutoArray/blob/main/autoarray/numba_util.py>: try and except requires better handlings
