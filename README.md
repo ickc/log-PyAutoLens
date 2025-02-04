@@ -157,6 +157,36 @@ Status:
 
 - [x] run tests
 
+## Notes
+
+### `neighbors` spec
+
+`neighbors_sizes` is a 1D array of the number of neighbors in each `source_plane_mesh_grid` pixel.So if there are 3 entries which are non-zero before you get to minus ones, then `neighbor_sizes` for that entry will be 3.
+
+I guess this information could be expressed as a matrix of size `[source_pixels, source_pixels]` where non-zero entries mean they share a vertex, and then it could be done as some sort of matrix multplication. The for loop way of doing things made sense for `numba` but may not make as much sense for JAX?
+
+In case you havent seen it, all these functgions have unitt ests which may help:
+
+https://github.com/Jammy2211/PyAutoArray/blob/main/test_autoarray/inversion/regularizations/test_constant.py
+
+The unit test here might be even more useful:[https://github.com/Jammy2211/PyAutoArray/blob/main/test_autoarray/inversion/regularizations/test_regularization_util.py](https://github.com/Jammy2211/PyAutoArray/blob/main/test_autoarray/inversion/regularizations/test_regularization_util.py)
+
+The `b_matrix` formalism is how you do this as matrix multiplication I think.
+
+See the docstring here as well (glad I wrote all this down somewhere lol): [https://github.com/Jammy2211/PyAutoArray/blob/main/autoarray/inversion/regularization/abstract.py](https://github.com/Jammy2211/PyAutoArray/blob/main/autoarray/inversion/regularization/abstract.py)
+
+This part of the docstring seems especially relevent:
+
+        # SKIPPING THE B MATRIX CALCULATION #
+
+The `neighbors` array can come from one of 3 sources, depending on the pixel grid used to reconstruct the source:
+
+- `Rectangular`: pixels are rectangles and therefore they all have 4 neighbors (except those on the edge of the grid).
+- `Delaunay`: Pixels are Delaunay triangles and all have 3 neighbors (exception those on the edge).
+- `Voronoi`: Pixels are Voronoi cells and have variable numbers of neighbors.
+
+Each of the above 3 pixelizations has their own unique function to compute the `neighbors` array.The `rectangular` neighbor calcualtion is here:[https://github.com/Jammy2211/PyAutoArray/blob/main/autoarray/inversion/pixelization/mesh/mesh_util.py](https://github.com/Jammy2211/PyAutoArray/blob/main/autoarray/inversion/pixelization/mesh/mesh_util.py)For `Deluanay` and `Voroni` they use `scipy.sptial` libraries, and they could pose a significant challenge to the conversion to JAX (I think this is the biggest unknown in how we are going to get everything running in JAX).For your current work, this is why I set it up to assume we have `neighbors` and we can work our way upstream later to JAX-ify this part of the calculation.
+
 ## Issues
 
 From @Jam:
