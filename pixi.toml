@@ -51,7 +51,7 @@ sqlalchemy = "==2.0.32"
 threadpoolctl = ">=3.1.0,<=3.2.0"
 timeout-decorator = "==0.5.0"
 typing_inspect = ">=0.4.0"
-ultranest = "==3.6.2"
+ultranest = ">=3.6.2"
 zeus-mcmc = "==2.5.4"
 
 [pypi-dependencies]
