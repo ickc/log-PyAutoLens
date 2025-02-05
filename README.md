@@ -34,7 +34,8 @@ Contribution worthy contents should not resides here, but as PRs to respective r
 
 # TODO
 
-- [ ] request projects dp004 and do018 for benchmarking via https://safe.epcc.ed.ac.uk/dirac @wait(for approval)
+- [ ] check NumbaPerformanceWarning (low priority as we aren't porting to Numba)
+- [x] request projects dp004 and do018 for benchmarking via https://safe.epcc.ed.ac.uk/dirac @wait(for approval)
     - [ ] setup /snap8/scratch/dp004/dc-kili1/RAC16/PyAutoLens
 - [x] refactor ported functions per implementation
     - [x] setup unit test
