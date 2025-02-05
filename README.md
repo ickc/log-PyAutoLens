@@ -42,7 +42,7 @@ Contribution worthy contents should not resides here, but as PRs to respective r
     - [ ] setup doc
     - [x] set up benchmark to compare implementations
         - [x] repeat previous rudimentary benchmark with float64 and double check for consistency
-        - [ ] compare results from pytest-benchmark to manually running it. The results seems wildly different
+        - [x] compare results from pytest-benchmark to manually running it. The results seems wildly different
             - perhaps write a manual benchmark with cli and ensure all available threads are used? Perhaps add a matmul in the beginning as a control.
     - [ ] Update duplicated code from <https://github.com/Jammy2211/dirac_rse_interferometer/> to this repo
 - [ ] explore calculation of symmetric matrix under JAX framework
