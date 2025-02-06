@@ -15,7 +15,7 @@ test-PyAutoLens = { cmd = "pytest", cwd = "packages/PyAutoLens" }
 test = { depends-on = ["test-PyAutoArray", "test-PyAutoConf", "test-PyAutoFit", "test-PyAutoGalaxy", "test-PyAutoLens"] }
 
 [dependencies]
-anesthetic = { version = "2.8.14", channel = "handley-lab" }
+anesthetic = { version = "2.8.14.*", channel = "handley-lab" }
 astropy = ">=5.0,<=6.1.2"
 astunparse = "==1.6.3"
 corner = "==2.2.2"
