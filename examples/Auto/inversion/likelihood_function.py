@@ -236,16 +236,23 @@ reconstruction = likelihood_function_funcs.reconstruction_positive_negative_from
 # NOTE:
 chi_squared_term_1 = np.linalg.multi_dot(
     [
-        mapping_matrix,  # NOTE: shape = (N, )
-        w_tilde,  # NOTE: shape = (N, N)
-        mapping_matrix,
+        reconstruction.T, # NOTE: shape = (M, )
+        curvature_matrix, # NOTE: shape = (M, M)
+        reconstruction, # NOTE: shape = (M, )
     ]
 )
+chi_squared_term_2 = -2.0 * np.linalg.multi_dot(
+    [
+        reconstruction.T, # NOTE: shape = (M, )
+        data_vector # NOTE: i.e. dirty_image
+    ]
+)
+chi_squared_term_3 = np.add(# NOTE: i.e. noise_normalization
+    np.sum(dataset.data.real**2.0 / dataset.noise_map.real**2.0),
+    np.sum(dataset.data.imag**2.0 / dataset.noise_map.imag**2.0),
+)
 
-# NOTE:
-chi_squared_term_2 = -np.multiply(2.0, np.dot(mapping_matrix, dirty_image)) # Need to double check dirty_image is the right input.
-
-chi_squared = chi_squared_term_1 + chi_squared_term_2
+chi_squared = chi_squared_term_1 + chi_squared_term_2 + chi_squared_term_3
 
 # %% [markdown]
 # # JAX Function 7
