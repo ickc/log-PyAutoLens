@@ -160,6 +160,13 @@ Status:
 
 ## Notes
 
+### Sizes
+
+M = number of image pixels in `real_space_mask` = ~70000  
+K = number of visibilitiies = ~1e7 (but this is only used to compute `w_tilde` otuside the likelihood function)  
+P = number of neighbors = 3 (for Delaunay) but can go up to 300 for Voronoi (but we can just focus on delaunay for now)  
+S = number of **source pixels** (e.g. `reconstruction.shape`) = 1000
+
 ### `neighbors` spec
 
 `neighbors_sizes` is a 1D array of the number of neighbors in each `source_plane_mesh_grid` pixel.So if there are 3 entries which are non-zero before you get to minus ones, then `neighbor_sizes` for that entry will be 3.
