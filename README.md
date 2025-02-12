@@ -4,6 +4,31 @@ This should contains all the notes about the project, notebooks and scripts I ex
 
 Contribution worthy contents should not resides here, but as PRs to respective repos.
 
+# Introduction for others
+
+This is a logbook written primarily for me, which may contains notes that may only make sense to me personally. But it also serves as a reproducible recipe to repeat what I experimented on or how I run other repos required for this project.
+
+As such, the 3 main prerequisites are `git`, `pixi`, and `task`.
+
+Git submodules are used to record all the repos needed to run some of the scripts/examples/notebooks in this project. I.e. just git pull this repo and initiate submodules, conveniently available as `task init`.
+
+`pixi` is used to reproduce the software stack, including the use of the softwares pinned via git submodules. You can either follow [Getting Started - Pixi by prefix.dev](https://pixi.sh/latest/) to install pixi, or use `environment.yml` with conda if you're more comfortable with that.
+
+Taskfile is used to run reusable short one liners. You can either install it via [Installation | Task](https://taskfile.dev/installation/), or open `Taskfile.yml` and copy the command there and run it manually.
+
+pixi creates a conda environment under the `.pixi/envs/default` subdirectory of current directory. You can use that as a Jupyter kernel to run notebooks for example.
+
+Caveats: there are some notebooks from the git submodules that when it is loading some datasets, you need to modify the path either because it is broken or because you're running it from a location different from it was written initially. The fix is usually obvious.
+
+Lastly, there's one script from autojax that can only be run from the environment from this project, as it requires some dependencies from the git submodules here. Run it like this:
+
+```sh
+pixi run packages/autojax/external/check_log_likelihood_from_dataset.py
+# or if you use conda
+conda activate .pixi/envs/default
+python packages/autojax/external/check_log_likelihood_from_dataset.py
+```
+
 # Project overview
 
 - DiRAC: revealing the nature of dark matter with the James Webb space telescope and JAX
@@ -34,7 +59,7 @@ Contribution worthy contents should not resides here, but as PRs to respective r
 
 # TODO
 
-- [ ] check NumbaPerformanceWarning (low priority as we aren't porting to Numba)
+- [x] check NumbaPerformanceWarning (low priority as we aren't porting to Numba)
 - [x] request projects dp004 and do018 for benchmarking via https://safe.epcc.ed.ac.uk/dirac @wait(for approval)
     - [ ] setup /snap8/scratch/dp004/dc-kili1/RAC16/PyAutoLens
 - [x] refactor ported functions per implementation
