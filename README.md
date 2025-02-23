@@ -51,6 +51,25 @@ python packages/autojax/external/check_log_likelihood_from_dataset.py
 
 # Questions
 
+- [x] `regularization_matrix` is guaranteed to be symmetric? (H = B.T @ B?)
+    - This relates to the inherent property of `neighbors`
+        - [x] gen `neighbors` to ensure symmetry
+    - [x] take advantage of it using `jnp.linalg.cholesky`
+- [ ] check and ask `w = C.T @ C + S.T @ S`
+- [x] `w_tilde` used in the likelihood calculation only through the eventual calculation of `curvature_matrix`?
+- [ ] flag the JAX CPU multithreading limitation
+    - https://github.com/jax-ml/jax/issues/5022#issuecomment-1222336766
+    - Numba implementation might still be useful for CPU?
+- [ ] scaling test to understand the computational requirement from the science case
+    - FLOP (speed)
+    - memory need
+    - perhaps keep multiple implementations I have and see how all of them scales in large M, K case
+- [ ] check `mapping_matrix` sparseness
+    - is it the only matrix that is sparse?
+    - is `curvature_matrix_via_w_tilde_curvature_preload_interferometer_from` essentially calculating the `mapping_matrix` on the fly without writing it down explicitly?
+        - [ ] understand the FLOPS and memory requirement of this function better
+- [ ] mention N and `N_PRIME` and its implication in calculating w_preload/w_compact
+    - I use N = N_PRIME in my mock data for scaling test, but it probably requires some architectural change in the PyAuto* code base
 - mentioned 4 notebooks, last 2 repeated:
     * [autogalaxy\_workspace/notebooks/advanced/log\_likelihood\_function/imaging/light\_profile/log\_likelihood\_function.ipynb at release · Jammy2211/autogalaxy\_workspace](https://github.com/Jammy2211/autogalaxy\_workspace/blob/release/notebooks/advanced/log\_likelihood\_function/imaging/light\_profile/log\_likelihood\_function.ipynb)
     * [autogalaxy\_workspace/notebooks/advanced/log\_likelihood\_function/imaging/linear\_light\_profile at release · Jammy2211/autogalaxy\_workspace](https://github.com/Jammy2211/autogalaxy\_workspace/tree/release/notebooks/advanced/log\_likelihood\_function/imaging/linear\_light\_profile)
