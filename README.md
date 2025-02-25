@@ -85,6 +85,7 @@ python packages/autojax/external/check_log_likelihood_from_dataset.py
 - [x] check NumbaPerformanceWarning (low priority as we aren't porting to Numba)
 - [x] request projects dp004 and do018 for benchmarking via https://safe.epcc.ed.ac.uk/dirac @wait(for approval)
     - [ ] setup /snap8/scratch/dp004/dc-kili1/RAC16/PyAutoLens
+        > You can create files under the snap8/do009 . So something like: /snap8/scratch/do009/dc-cheu2/RAC16/PyAutoLens
 - [x] refactor ported functions per implementation
     - [x] setup unit test
     - [ ] setup doc
