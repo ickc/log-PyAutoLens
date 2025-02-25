@@ -78,6 +78,10 @@ python packages/autojax/external/check_log_likelihood_from_dataset.py
 
 # TODO
 
+- [x] check number of non-zero element per row/column of mapping_matrix
+    - For the sample dataset, each image plane pixel maps to 3 source pixels (probably only for Delaunay triangulation). Curiously this is not P=10 here.
+- [ ] scaling test of w_tilde and curvature matrix including running on GPU
+- [ ] explore how mapping_matrix is calculated?
 - [x] check NumbaPerformanceWarning (low priority as we aren't porting to Numba)
 - [x] request projects dp004 and do018 for benchmarking via https://safe.epcc.ed.ac.uk/dirac @wait(for approval)
     - [ ] setup /snap8/scratch/dp004/dc-kili1/RAC16/PyAutoLens
