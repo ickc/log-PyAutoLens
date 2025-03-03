@@ -23,11 +23,9 @@ Caveats: there are some notebooks from the git submodules that when it is loadin
 Lastly, there's some scripts from autojax that can only be run from the environment from this project, as it requires some dependencies from the git submodules here. Run it like this:
 
 ```sh
-pixi run packages/autojax/external/check_log_likelihood_from_dataset.py
 pixi run packages/autojax/external/get_dataset.py
 # or if you use conda
 conda activate .pixi/envs/default
-python packages/autojax/external/check_log_likelihood_from_dataset.py
 python packages/autojax/external/get_dataset.py
 ```
 
