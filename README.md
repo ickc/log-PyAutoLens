@@ -102,6 +102,7 @@ python packages/autojax/external/get_dataset.py
         - https://docs.google.com/presentation/d/1XzNGCC_bs1xDpmCLaXOdTnG7cdpfvlpIkEhwuypvYwA/edit
             - slide 6 of the second deck is good
 - bonus features
+    - generates BCOO from sparse mapping matrix
     - shorten turn around of initial calculation of w_tilde/w_compact.
     - circulant w_tilde approximation
 - [x] check number of non-zero element per row/column of mapping_matrix
