@@ -93,10 +93,16 @@ python packages/autojax/external/get_dataset.py
 - [ ] presentation
     - for general audience, albeit slides can be cherry-picked depending on audiences
     - introduction of the project, expectation
-        - [ ] ask about autodiff expectation: which variant of MCMC exactly?
-        - [ ] what is the expected no. of iterations run on the log-likelihood function?
+        - [x] ask about autodiff expectation: which variant of MCMC exactly?
+            - https://github.com/blackjax-devs/blackjax is a possible choice
+        - [x] what is the expected no. of iterations run on the log-likelihood function?
+            - ~100,000
     - benchmark & profiling: JAX vs Numba, CPU vs GPU, etc.
     - showcase examples
+    - slide deck
+        - https://docs.google.com/presentation/d/1FOsbmv58V4PwRNt_E0AvF54MFUNZ2e_vItHMXmVlTW8/edit
+        - https://docs.google.com/presentation/d/1XzNGCC_bs1xDpmCLaXOdTnG7cdpfvlpIkEhwuypvYwA/edit
+            - slide 6 of the second deck is good
 - bonus features
     - shorten turn around of initial calculation of w_tilde/w_compact.
     - circulant w_tilde approximation
