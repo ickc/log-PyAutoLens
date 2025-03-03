@@ -20,13 +20,15 @@ pixi creates a conda environment under the `.pixi/envs/default` subdirectory of 
 
 Caveats: there are some notebooks from the git submodules that when it is loading some datasets, you need to modify the path either because it is broken or because you're running it from a location different from it was written initially. The fix is usually obvious.
 
-Lastly, there's one script from autojax that can only be run from the environment from this project, as it requires some dependencies from the git submodules here. Run it like this:
+Lastly, there's some scripts from autojax that can only be run from the environment from this project, as it requires some dependencies from the git submodules here. Run it like this:
 
 ```sh
 pixi run packages/autojax/external/check_log_likelihood_from_dataset.py
+pixi run packages/autojax/external/get_dataset.py
 # or if you use conda
 conda activate .pixi/envs/default
 python packages/autojax/external/check_log_likelihood_from_dataset.py
+python packages/autojax/external/get_dataset.py
 ```
 
 # Project overview
@@ -46,11 +48,13 @@ python packages/autojax/external/check_log_likelihood_from_dataset.py
     - Coleman Krawczyk is the one to ask about jax
     - Rich developed PyAutoLens from scratch for 6-7 years
 - [x] schedule a weekly meeting in the week of 12/9
-- [ ] learn jax @inprogress
+- [x] learn jax
 - Gokmen will ask James about tasks split between us
 
 # Questions
 
+- [x] I have a question on rectangular grid and pixel. When reading through the code, it seems it may support a grid (and its mask) that is not square, and from the pixel_scales, it seems that even pixel itself can be a rectangle too. Do I need to make sure the code supports the non-square case?
+    - non-square pixel is used elsewhere but can be assumed in this project
 - [x] `regularization_matrix` is guaranteed to be symmetric? (H = B.T @ B?)
     - This relates to the inherent property of `neighbors`
         - [x] gen `neighbors` to ensure symmetry
@@ -78,29 +82,46 @@ python packages/autojax/external/check_log_likelihood_from_dataset.py
 
 # TODO
 
+- [ ] scaling test:
+    - include w_tilde and curvature matrix including running on GPU
+    - for checking if there's unexpected performance issue in memory/FLOP utilization in larger dataset size
+- [ ] documentation
+    - function docstrings: especially for new functions
+        - math
+        - algorithm: point to vmap, scan, loop ordering, etc.
+    - general doc, such as README of autojax
+- [ ] presentation
+    - for general audience, albeit slides can be cherry-picked depending on audiences
+    - introduction of the project, expectation
+        - [ ] ask about autodiff expectation: which variant of MCMC exactly?
+        - [ ] what is the expected no. of iterations run on the log-likelihood function?
+    - benchmark & profiling: JAX vs Numba, CPU vs GPU, etc.
+    - showcase examples
+- bonus features
+    - shorten turn around of initial calculation of w_tilde/w_compact.
+    - circulant w_tilde approximation
 - [x] check number of non-zero element per row/column of mapping_matrix
     - For the sample dataset, each image plane pixel maps to 3 source pixels (probably only for Delaunay triangulation). Curiously this is not P=10 here.
-- [ ] scaling test of w_tilde and curvature matrix including running on GPU
-- [ ] explore how mapping_matrix is calculated?
+- [x] explore how mapping_matrix is calculated?
 - [x] check NumbaPerformanceWarning (low priority as we aren't porting to Numba)
 - [x] request projects dp004 and do018 for benchmarking via https://safe.epcc.ed.ac.uk/dirac @wait(for approval)
     - [ ] setup /snap8/scratch/dp004/dc-kili1/RAC16/PyAutoLens
         > You can create files under the snap8/do009 . So something like: /snap8/scratch/do009/dc-cheu2/RAC16/PyAutoLens
 - [x] refactor ported functions per implementation
     - [x] setup unit test
-    - [ ] setup doc
+    - [x] setup doc
     - [x] set up benchmark to compare implementations
         - [x] repeat previous rudimentary benchmark with float64 and double check for consistency
         - [x] compare results from pytest-benchmark to manually running it. The results seems wildly different
             - perhaps write a manual benchmark with cli and ensure all available threads are used? Perhaps add a matmul in the beginning as a control.
-    - [ ] Update duplicated code from <https://github.com/Jammy2211/dirac_rse_interferometer/> to this repo
-- [ ] explore calculation of symmetric matrix under JAX framework
+    - [x] Update duplicated code from <https://github.com/Jammy2211/dirac_rse_interferometer/> to this repo
+- [x] explore calculation of symmetric matrix under JAX framework
 - Go through
     - [x] <https://github.com/Jammy2211/autogalaxy_workspace_test/blob/master/jax_examples/task_2_simple_conversions/func_grad_manual.py>
-    * [ ] [autogalaxy_workspace/notebooks/advanced/log_likelihood_function/imaging/light_profile/log_likelihood_function.ipynb at release · Jammy2211/autogalaxy_workspace](https://github.com/Jammy2211/autogalaxy_workspace/blob/release/notebooks/advanced/log_likelihood_function/imaging/light_profile/log_likelihood_function.ipynb)
-    * [ ] [autogalaxy_workspace/notebooks/advanced/log_likelihood_function/imaging/linear_light_profile at release · Jammy2211/autogalaxy_workspace](https://github.com/Jammy2211/autogalaxy_workspace/tree/release/notebooks/advanced/log_likelihood_function/imaging/linear_light_profile)
-    * [ ] [autogalaxy_workspace/notebooks/advanced/log_likelihood_function/interferometer/light_profile/log_likelihood_function.ipynb at release · Jammy2211/autogalaxy_workspace](https://github.com/Jammy2211/autogalaxy_workspace/blob/release/notebooks/advanced/log_likelihood_function/interferometer/light_profile/log_likelihood_function.ipynb)
-    * [ ] [autogalaxy_workspace/notebooks/advanced/log_likelihood_function/imaging/pixelization/log_likelihood_function.ipynb at release · Jammy2211/autogalaxy_workspace](https://github.com/Jammy2211/autogalaxy_workspace/blob/release/notebooks/advanced/log_likelihood_function/imaging/pixelization/log_likelihood_function.ipynb)?
+    * [x] [autogalaxy_workspace/notebooks/advanced/log_likelihood_function/imaging/light_profile/log_likelihood_function.ipynb at release · Jammy2211/autogalaxy_workspace](https://github.com/Jammy2211/autogalaxy_workspace/blob/release/notebooks/advanced/log_likelihood_function/imaging/light_profile/log_likelihood_function.ipynb)
+    * [x] [autogalaxy_workspace/notebooks/advanced/log_likelihood_function/imaging/linear_light_profile at release · Jammy2211/autogalaxy_workspace](https://github.com/Jammy2211/autogalaxy_workspace/tree/release/notebooks/advanced/log_likelihood_function/imaging/linear_light_profile)
+    * [x] [autogalaxy_workspace/notebooks/advanced/log_likelihood_function/interferometer/light_profile/log_likelihood_function.ipynb at release · Jammy2211/autogalaxy_workspace](https://github.com/Jammy2211/autogalaxy_workspace/blob/release/notebooks/advanced/log_likelihood_function/interferometer/light_profile/log_likelihood_function.ipynb)
+    * [x] [autogalaxy_workspace/notebooks/advanced/log_likelihood_function/imaging/pixelization/log_likelihood_function.ipynb at release · Jammy2211/autogalaxy_workspace](https://github.com/Jammy2211/autogalaxy_workspace/blob/release/notebooks/advanced/log_likelihood_function/imaging/pixelization/log_likelihood_function.ipynb)?
 - go through <https://github.com/Jammy2211/dirac_rse_interferometer>
     > At the moment, you only care about this script, which shows how a simple dataset we are going to fit is simulated:
     >
@@ -129,7 +150,7 @@ python packages/autojax/external/check_log_likelihood_from_dataset.py
 
         $$W̃_{ij} = \sum_{k=1}^N \frac{1}{n_k^2} \cos(2\pi[(g_{i1} - g_{j1})u_{k0} + (g_{i0} - g_{j0})u_{k1}])$$
 
-    - [ ] https://github.com/Jammy2211/dirac_rse_interferometer/blob/main/simulators/sma.py
+    - [x] https://github.com/Jammy2211/dirac_rse_interferometer/blob/main/simulators/sma.py
         - seems to be from https://github.com/Jammy2211/autolens_workspace/blob/main/notebooks/simulators/interferometer/instruments/sma.ipynb
 
 > Another interesting question which could prove a problem with the full JAX implementation  is how to get a 2d delaunay mesh to work, which currently uses scipy https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.Delaunay.html
