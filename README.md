@@ -353,7 +353,17 @@ TARGET_DIR="/cosma/apps/durham/dc-cheu2"
 LINKS=(.apptainer .cache .conda .local .spack)
 for LINK in "${LINKS[@]}"; do
     ln -s "$TARGET_DIR/$LINK" "$LINK"
-done
+done  
+```
+
+### Submitting jobs
+
+[GPUs — cosma 0.1 documentation](https://cosma.readthedocs.io/en/latest/gpu.html#mi300x),
+
+```bash
+srun --partition=mi300x --account=do018 --time=00:30:00 --pty /bin/bash
+srun --partition=mi300x --account=do018 --time=02:00:00 --exclusive --pty /bin/bash
+salloc --partition=mi300x --account=do018 --time=02:00:00 --exclusive
 ```
 
 # References
