@@ -80,6 +80,9 @@ python packages/autojax/external/get_dataset.py
 
 # TODO
 
+- [x] fix bugs on GPU:
+    - `test_constant_regularization_matrix_from_jax`
+    - `test_reconstruction_positive_negative_from_jax`: `XlaRuntimeError: INTERNAL: cuSolver internal error`
 - [ ] scaling test:
     - include w_tilde and curvature matrix including running on GPU
     - for checking if there's unexpected performance issue in memory/FLOP utilization in larger dataset size
