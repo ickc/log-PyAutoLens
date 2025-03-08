@@ -80,6 +80,9 @@ python packages/autojax/external/get_dataset.py
 
 # TODO
 
+- [ ] final release
+    - [ ] make a copy in UoE RSE repo
+    - [ ] make a GitHub Releases
 - [x] fix bugs on GPU:
     - `test_constant_regularization_matrix_from_jax`
     - `test_reconstruction_positive_negative_from_jax`: `XlaRuntimeError: INTERNAL: cuSolver internal error`
@@ -90,6 +93,7 @@ python packages/autojax/external/get_dataset.py
     - function docstrings: especially for new functions
         - math
         - algorithm: point to vmap, scan, loop ordering, etc.
+    - add "advanced benchmarking"
     - general doc, such as README of autojax
 - [ ] presentation
     - for general audience, albeit slides can be cherry-picked depending on audiences
