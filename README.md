@@ -374,8 +374,8 @@ srun --partition=mi300x --account=do018 --time=02:00:00 --exclusive --pty /bin/b
 salloc --partition=mi300x --account=do018 --time=02:00:00 --exclusive
 # COSMA5
 srun --partition=cosma5 --account=durham --time=72:00:00 --nodes=1 --ntasks=1 --cpus-per-task=256 --pty /bin/bash
-# should work after do016 is approved
-srun --partition=cosma8-shm --account=do016 --time=00:30:00 --exclusive --pty /bin/bash
+# A100
+srun --partition=cosma8-shm --account=dr004 --time=00:30:00 --exclusive --pty /bin/bash
 
 ```
 
