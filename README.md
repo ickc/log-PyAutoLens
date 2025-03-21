@@ -88,7 +88,12 @@ python packages/autojax/external/get_dataset.py
     - `test_reconstruction_positive_negative_from_jax`: `XlaRuntimeError: INTERNAL: cuSolver internal error`
 - [ ] scaling test:
     - include w_tilde and curvature matrix including running on GPU
-    - for checking if there's unexpected performance issue in memory/FLOP utilization in larger dataset size
+    - for checking if there's unexpected performance issue in memory/FLOP utilization in larger 
+    - 3 variants on CPU: constraint to 1 thread, 256 thread, and no constraint
+    - run on A100 with `cosma8-shm`
+    - bonus: Grace Hopper
+        - solve dotfiles dispatch first
+        - support aarch64 in pixidataset size
 - [ ] documentation
     - function docstrings: especially for new functions
         - math
